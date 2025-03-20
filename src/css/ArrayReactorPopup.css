@@ -1,0 +1,242 @@
+.reactor-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.reactor-popup-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 95%;
+  max-width: 1400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: reactorFadeIn 0.3s ease-out;
+}
+
+@keyframes reactorFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reactor-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.reactor-popup-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.reactor-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7f8c8d;
+  transition: color 0.2s;
+}
+
+.reactor-close-button:hover {
+  color: #e74c3c;
+}
+
+.reactor-popup-content {
+  padding: 20px;
+}
+
+.reactor-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.reactor-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.reactor-table th, 
+.reactor-table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.reactor-table th {
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+}
+
+.reactor-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reactor-table tr:hover {
+  background-color: #f0f7ff;
+}
+
+.reactor-table input,
+.reactor-table select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.reactor-table input:focus,
+.reactor-table select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.number-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input-container input {
+  flex: 1;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.number-controls {
+  display: flex;
+  flex-direction: column;
+  margin-left: -25px;
+}
+
+.number-controls button {
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 0;
+  height: 12px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.number-controls button:hover {
+  color: #3498db;
+}
+
+.reactor-controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.reactor-add-button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.reactor-add-button:hover {
+  background-color: #27ae60;
+}
+
+.reactor-remove-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.reactor-remove-button:hover {
+  background-color: #c0392b;
+}
+
+.reactor-remove-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.reactor-button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.reactor-cancel-button,
+.reactor-ok-button {
+  padding: 10px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  font-size: 14px;
+}
+
+.reactor-cancel-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.reactor-ok-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.reactor-cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.reactor-ok-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 1200px) {
+  .reactor-table {
+    font-size: 14px;
+  }
+  
+  .reactor-table th, 
+  .reactor-table td {
+    padding: 8px 10px;
+  }
+}
