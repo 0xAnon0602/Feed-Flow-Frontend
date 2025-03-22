@@ -95,3 +95,80 @@
   width: 140px; /* bigger so we can angle to concentrate */
   height: 150px;
 }
+
+/* Add this to your existing FlowDiagram.css file */
+
+/* Run button container for positioning at the bottom */
+.run-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.run-simulation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background: #7fdbff;
+  color: #2c3e50;
+  border: 2px solid #0074d9;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 116, 217, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Rest of the button styling remains the same */
+.run-simulation-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 116, 217, 0.4);
+  background: #b3e5fc;
+}
+
+.run-simulation-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 116, 217, 0.3);
+}
+
+.run-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.run-text {
+  letter-spacing: 0.5px;
+}
+
+/* Add a subtle pulsing animation for the button */
+@keyframes pulse-blue {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 116, 217, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 116, 217, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 116, 217, 0.3);
+  }
+}
+
+.run-simulation-button:hover {
+  animation: pulse-blue 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .run-simulation-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

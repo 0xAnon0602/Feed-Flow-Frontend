@@ -16,8 +16,8 @@
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  width: 95%;
-  max-width: 1400px;
+  width: 90%;
+  max-width: 1200px;
   max-height: 90vh;
   overflow-y: auto;
   animation: reactorFadeIn 0.3s ease-out;
@@ -76,20 +76,44 @@
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  overflow: hidden;
+  table-layout: fixed;
 }
 
 .reactor-table th, 
 .reactor-table td {
-  padding: 12px 15px;
+  padding: 10px;
   border: 1px solid #e0e0e0;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .reactor-table th {
   background-color: #3498db;
   color: white;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+.reactor-table th:nth-child(1) {
+  width: 60px;
+}
+
+.reactor-table th:nth-child(2),
+.reactor-table th:nth-child(3) {
+  width: 120px;
+}
+
+.reactor-table th:nth-child(4) {
+  width: 150px;
+}
+
+.reactor-table th:nth-child(5),
+.reactor-table th:nth-child(6) {
+  width: 120px;
+}
+
+.reactor-table th:nth-child(7) {
+  width: 100px;
 }
 
 .reactor-table tr:nth-child(even) {
@@ -103,11 +127,12 @@
 .reactor-table input,
 .reactor-table select {
   width: 100%;
-  padding: 8px 10px;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .reactor-table input:focus,
@@ -120,18 +145,21 @@
 .number-input-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .number-input-container input {
-  flex: 1;
+  width: calc(100% - 20px);
   text-align: right;
-  padding-right: 30px;
+  padding-right: 25px;
 }
 
 .number-controls {
   display: flex;
   flex-direction: column;
-  margin-left: -25px;
+  margin-left: -20px;
+  position: relative;
+  z-index: 2;
 }
 
 .number-controls button {
@@ -141,7 +169,7 @@
   cursor: pointer;
   padding: 0;
   height: 12px;
-  width: 20px;
+  width: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,6 +210,7 @@
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .reactor-remove-button:hover {
@@ -230,13 +259,59 @@
   background-color: #2980b9;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
+  .reactor-popup-container {
+    width: 95%;
+    max-width: 95%;
+  }
+  
   .reactor-table {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .reactor-table th, 
   .reactor-table td {
-    padding: 8px 10px;
+    padding: 8px 5px;
+  }
+  
+  .reactor-table input,
+  .reactor-table select {
+    padding: 6px 4px;
+    font-size: 13px;
+  }
+  
+  .reactor-remove-button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reactor-popup-container {
+    width: 98%;
+    max-width: 98%;
+  }
+  
+  .reactor-table {
+    font-size: 12px;
+  }
+  
+  .reactor-table th:nth-child(1) {
+    width: 40px;
+  }
+  
+  .reactor-table th:nth-child(2),
+  .reactor-table th:nth-child(3),
+  .reactor-table th:nth-child(5),
+  .reactor-table th:nth-child(6) {
+    width: 80px;
+  }
+  
+  .reactor-table th:nth-child(4) {
+    width: 100px;
+  }
+  
+  .reactor-table th:nth-child(7) {
+    width: 70px;
   }
 }

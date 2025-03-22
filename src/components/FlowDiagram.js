@@ -33,6 +33,12 @@ const FlowDiagram = () => {
     setIsReactorPopupOpen(false);
   };
 
+  const handleRunSimulation = () => {
+    // This function will be implemented to run the simulation
+    console.log("Running simulation...");
+    // Add your simulation logic here
+  };
+
   return (
     <div className="flow-diagram-container">
       {/* Feed box */}
@@ -71,7 +77,6 @@ const FlowDiagram = () => {
         <span className="box-title">Flow</span>
       </div>
 
-      {/* Rest of the component remains unchanged */}
       {/* Arrow: Flow -> Array Reactor */}
       <svg className="arrow arrow-flow-reactor">
         <defs>
@@ -158,13 +163,11 @@ const FlowDiagram = () => {
       {/* Product box */}
       <div className="flow-box product-box">
         <span className="box-title">Product</span>
-        <span className="box-value">0.00</span>
       </div>
 
       {/* Concentrate box */}
       <div className="flow-box concentrate-box">
         <span className="box-title">Concentrate</span>
-        <span className="box-value">0.00</span>
       </div>
 
       {/* Feed Water Data Popup */}
@@ -175,6 +178,14 @@ const FlowDiagram = () => {
       
       {/* Array Reactor Popup */}
       <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={closeReactorPopup} />
+      
+      {/* Run Button - Positioned at the bottom */}
+      <div className="run-button-container">
+        <button className="run-simulation-button" onClick={handleRunSimulation}>
+          <span className="run-icon">▶</span>
+          <span className="run-text">Run</span>
+        </button>
+      </div>
     </div>
   );
 };

@@ -104,6 +104,10 @@ const FlowRatesPopup = ({ isOpen, onClose }) => {
               </div>
             </div>
           </div>
+
+          <div className="reactor-button-row">
+            <button className="reactor-ok-button" onClick={onClose}>OK</button>
+          </div>
           
         </div>
       </div>

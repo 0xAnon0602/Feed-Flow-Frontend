@@ -7,8 +7,6 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
       stage: 1,
       pressureVessels: 0,
       elementsPerVessel: 0,
-      application: "",
-      elementGroup: "",
       elementModel: "",
       elementAge: 0.00,
       fluxAnnualChange: 0.00
@@ -17,8 +15,6 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
       stage: 2,
       pressureVessels: 0,
       elementsPerVessel: 0,
-      application: "",
-      elementGroup: "",
       elementModel: "",
       elementAge: 0.00,
       fluxAnnualChange: 0.00
@@ -161,8 +157,7 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
           </div>
           
           <div className="reactor-button-row">
-            <button className="reactor-cancel-button" onClick={onClose}>Cancel</button>
-            <button className="reactor-ok-button">OK</button>
+            <button className="reactor-ok-button" onClick={onClose}>OK</button>
           </div>
         </div>
       </div>
