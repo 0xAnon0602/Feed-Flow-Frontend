@@ -3,11 +3,15 @@ import "../css/FlowDiagram.css";
 import FeedWaterDataPopup from "./FeedWaterDataPopup";
 import FlowRatesPopup from "./FlowRatesPopup";
 import ArrayReactorPopup from "./ArrayReactorPopup";
+import ProductDataPopup from "./ProductDataPopup";
+import ConcentrateDataPopup from "./ConcentrateDataPopup";
 
 const FlowDiagram = () => {
   const [isFeedPopupOpen, setIsFeedPopupOpen] = useState(false);
   const [isFlowPopupOpen, setIsFlowPopupOpen] = useState(false);
   const [isReactorPopupOpen, setIsReactorPopupOpen] = useState(false);
+  const [isProductPopupOpen, setIsProductPopupOpen] = useState(false);
+  const [isConcentratePopupOpen, setIsConcentratePopupOpen] = useState(false);
 
   const handleFeedClick = () => {
     setIsFeedPopupOpen(true);
@@ -31,6 +35,22 @@ const FlowDiagram = () => {
 
   const closeReactorPopup = () => {
     setIsReactorPopupOpen(false);
+  };
+
+  const handleProductClick = () => {
+    setIsProductPopupOpen(true);
+  };
+
+  const closeProductPopup = () => {
+    setIsProductPopupOpen(false);
+  };
+
+  const handleConcentrateClick = () => {
+    setIsConcentratePopupOpen(true);
+  };
+
+  const closeConcentratePopup = () => {
+    setIsConcentratePopupOpen(false);
   };
 
   const handleRunSimulation = () => {
@@ -161,12 +181,12 @@ const FlowDiagram = () => {
       </svg>
 
       {/* Product box */}
-      <div className="flow-box product-box">
+      <div className="flow-box product-box" onClick={handleProductClick}>
         <span className="box-title">Product</span>
       </div>
 
       {/* Concentrate box */}
-      <div className="flow-box concentrate-box">
+      <div className="flow-box concentrate-box" onClick={handleConcentrateClick}>
         <span className="box-title">Concentrate</span>
       </div>
 
@@ -178,6 +198,12 @@ const FlowDiagram = () => {
       
       {/* Array Reactor Popup */}
       <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={closeReactorPopup} />
+      
+      {/* Product Data Popup */}
+      <ProductDataPopup isOpen={isProductPopupOpen} onClose={closeProductPopup} />
+      
+      {/* Concentrate Data Popup */}
+      <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={closeConcentratePopup} />
       
       {/* Run Button - Positioned at the bottom */}
       <div className="run-button-container">

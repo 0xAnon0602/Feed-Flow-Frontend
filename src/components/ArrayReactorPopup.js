@@ -9,7 +9,6 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
       elementsPerVessel: 0,
       elementModel: "",
       elementAge: 0.00,
-      fluxAnnualChange: 0.00
     },
     {
       stage: 2,
@@ -17,7 +16,6 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
       elementsPerVessel: 0,
       elementModel: "",
       elementAge: 0.00,
-      fluxAnnualChange: 0.00
     }
   ]);
 
@@ -71,7 +69,6 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                   <th>Elements Per Vessel</th>
                   <th>Element Model</th>
                   <th>Element Age (yr)</th>
-                  <th>Flux Annual % Change</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -127,14 +124,7 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                         min="0"
                       />
                     </td>
-                    <td>
-                      <input 
-                        type="number" 
-                        value={stage.fluxAnnualChange} 
-                        onChange={(e) => handleStageChange(index, 'fluxAnnualChange', parseFloat(e.target.value) || 0)}
-                        step="0.01"
-                      />
-                    </td>
+       
                     <td>
                       <button 
                         className="reactor-remove-button" 
