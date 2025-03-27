@@ -1,52 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { updateIonValue, updateParameter } from '../../redux/slices/concentrateSlice';
 
 const ConcentrateDataPopup = ({ isOpen, onClose }) => {
-  // Initial state for all ion values
-  const [ionValues, setIonValues] = useState({
-    calcium: "0.00",
-    magnesium: "0.00",
-    sodium: "0.00",
-    potassium: "0.00",
-    ammonia: "0.00",
-    barium: "0.00",
-    strontium: "0.00",
-    iron: "0.00",
-    manganese: "0.00",
-    sulfate: "0.00",
-    chloride: "0.00",
-    fluoride: "0.00",
-    nitrate: "0.00",
-    bromide: "0.00",
-    phosphate: "0.00",
-    boron: "0.00",
-    silica: "0.00",
-    hydrogenSulfide: "0.00",
-    bicarbonate: "0.00",
-    carbonDioxide: "0.00",
-    carbonate: "0.00"
-  });
-
-  // Parameters state
-  const [parameters, setParameters] = useState({
-    feedFlow: "0.00",
-    tds: "0.00",
-    salts: "0.00"
-  });
+  const dispatch = useDispatch();
+  const { ionValues, parameters } = useSelector(state => state.concentrate);
 
   // Handle ion input changes
   const handleIonChange = (key, value) => {
-    setIonValues(prev => ({
-      ...prev,
-      [key]: value
-    }));
+    dispatch(updateIonValue({ key, value }));
   };
 
   // Handle parameter changes
   const handleParameterChange = (key, value) => {
-    setParameters(prev => ({
-      ...prev,
-      [key]: value
-    }));
+    dispatch(updateParameter({ key, value }));
   };
 
   if (!isOpen) return null;
@@ -61,7 +28,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
         
         <div className="popup-content">
           <div className="popup-layout">
-            <div className="ion-table-container">
+          <div className="ion-table-container">
               <table className="ion-table">
                 <thead>
                   <tr className="table-header">
@@ -308,6 +275,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
               </table>
             </div>
             
+            
             <div className="parameters-container">
               <div className="parameters-header">Parameters</div>
               
@@ -316,7 +284,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters.feedFlow} 
-                  onChange={(e) => handleParameterChange('ph', e.target.value)}
+                  onChange={(e) => handleParameterChange('feedFlow', e.target.value)}
                   readOnly
                 />
               </div>
@@ -326,7 +294,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters.tds} 
-                  onChange={(e) => handleParameterChange('temperature', e.target.value)}
+                  onChange={(e) => handleParameterChange('tds', e.target.value)}
                   readOnly
                 />
               </div>
@@ -336,11 +304,10 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters.salts} 
-                  onChange={(e) => handleParameterChange('tds', e.target.value)}
+                  onChange={(e) => handleParameterChange('salts', e.target.value)}
                   readOnly
                 />
               </div>
-
             </div>
           </div>
         </div>

@@ -270,3 +270,19 @@
     margin-top: 25px;
   }
 }
+
+.saturation-input {
+  width: 50px;
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: right;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.saturation-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}

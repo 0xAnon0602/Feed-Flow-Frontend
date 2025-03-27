@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "../css/FlowDiagram.css";
-import FeedWaterDataPopup from "./FeedWaterDataPopup";
-import FlowRatesPopup from "./FlowRatesPopup";
-import ArrayReactorPopup from "./ArrayReactorPopup";
-import ProductDataPopup from "./ProductDataPopup";
-import ConcentrateDataPopup from "./ConcentrateDataPopup";
+import FeedWaterDataPopup from "./popups/FeedWaterDataPopup";
+import FlowRatesPopup from "./popups/FlowRatesPopup";
+import ArrayReactorPopup from "./popups/ArrayReactorPopup";
+import ProductDataPopup from "./popups/ProductDataPopup";
+import ConcentrateDataPopup from "./popups/ConcentrateDataPopup";
 
 const FlowDiagram = () => {
   const [isFeedPopupOpen, setIsFeedPopupOpen] = useState(false);
@@ -12,6 +12,8 @@ const FlowDiagram = () => {
   const [isReactorPopupOpen, setIsReactorPopupOpen] = useState(false);
   const [isProductPopupOpen, setIsProductPopupOpen] = useState(false);
   const [isConcentratePopupOpen, setIsConcentratePopupOpen] = useState(false);
+
+  
 
   const handleFeedClick = () => {
     setIsFeedPopupOpen(true);

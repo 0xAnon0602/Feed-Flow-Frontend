@@ -1,52 +1,23 @@
-import React, { useState } from "react";
-import "../css/ArrayReactorPopup.css";
+import React from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { updateStage, addStage, removeStage } from '../../redux/slices/reactorSlice';
+import "../../css/ArrayReactorPopup.css";
 
 const ArrayReactorPopup = ({ isOpen, onClose }) => {
-  const [stageData, setStageData] = useState([
-    {
-      stage: 1,
-      pressureVessels: 0,
-      elementsPerVessel: 0,
-      elementModel: "",
-      elementAge: 0.00,
-    },
-    {
-      stage: 2,
-      pressureVessels: 0,
-      elementsPerVessel: 0,
-      elementModel: "",
-      elementAge: 0.00,
-    }
-  ]);
+  const dispatch = useDispatch();
+  const stageData = useSelector(state => state.reactor);
 
   const handleStageChange = (index, field, value) => {
-    const newStageData = [...stageData];
-    newStageData[index][field] = value;
-    setStageData(newStageData);
+    dispatch(updateStage({ index, field, value }));
   };
 
   const handleAddStage = () => {
-    const newStage = {
-      stage: stageData.length + 1,
-      pressureVessels: 0,
-      elementsPerVessel: 0,
-      application: "",
-      elementGroup: "",
-      elementModel: "",
-      elementAge: 0.00,
-      fluxAnnualChange: 0.00
-    };
-    setStageData([...stageData, newStage]);
+    dispatch(addStage());
   };
 
   const handleRemoveStage = (index) => {
     if (stageData.length <= 1) return;
-    const newStageData = stageData.filter((_, i) => i !== index);
-    // Update stage numbers
-    newStageData.forEach((stage, i) => {
-      stage.stage = i + 1;
-    });
-    setStageData(newStageData);
+    dispatch(removeStage(index));
   };
 
   if (!isOpen) return null;
