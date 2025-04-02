@@ -15,7 +15,7 @@ body {
   width: 800px; /* adjust as needed */
   height: 400px; /* adjust as needed */
   margin: 1rem auto;
-  /* no border or background */
+  margin-top: 0px;
 }
 
 /* Common box styling */
@@ -186,8 +186,7 @@ body {
 
 
 .welcome-guide {
-  margin-top: 30px;
-  padding: 20px;
+  padding: 10px;
   background-color: #d6dce3;
   border-radius: 10px;
   border: 1px solid #000;
@@ -208,8 +207,8 @@ body {
 }
 
 .welcome-guide li {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-size: 1rem;
 }
 
 /* Loading spinner */
