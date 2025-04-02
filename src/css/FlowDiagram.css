@@ -1,3 +1,14 @@
+body {
+  background-color: #f0f8ff; /* AliceBlue - very light blue */
+}
+
+.flow-diagram-wrapper {
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
 .flow-diagram-container {
   /* Remove any border or background so there's no "box" around the diagram */
   position: relative;
@@ -199,4 +210,30 @@
 .welcome-guide li {
   margin-bottom: 15px;
   font-size: 1.1rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #2c3e50;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Disabled button state */
+.run-simulation-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  animation: none;
 }

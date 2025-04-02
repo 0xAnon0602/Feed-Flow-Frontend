@@ -13,59 +13,81 @@ const FlowDiagram = () => {
   const [isProductPopupOpen, setIsProductPopupOpen] = useState(false);
   const [isConcentratePopupOpen, setIsConcentratePopupOpen] = useState(false);
 
-  
-
-  const handleFeedClick = () => {
-    setIsFeedPopupOpen(true);
+  // Replace individual handlers with generic ones
+  const handleBoxClick = (type) => {
+    switch (type) {
+      case 'feed':
+        setIsFeedPopupOpen(true);
+        break;
+      case 'flow':
+        setIsFlowPopupOpen(true);
+        break;
+      case 'reactor':
+        setIsReactorPopupOpen(true);
+        break;
+      case 'product':
+        setIsProductPopupOpen(true);
+        break;
+      case 'concentrate':
+        setIsConcentratePopupOpen(true);
+        break;
+      default:
+        break;
+    }
   };
 
-  const closeFeedPopup = () => {
-    setIsFeedPopupOpen(false);
+  const closePopup = (type) => {
+    switch (type) {
+      case 'feed':
+        setIsFeedPopupOpen(false);
+        break;
+      case 'flow':
+        setIsFlowPopupOpen(false);
+        break;
+      case 'reactor':
+        setIsReactorPopupOpen(false);
+        break;
+      case 'product':
+        setIsProductPopupOpen(false);
+        break;
+      case 'concentrate':
+        setIsConcentratePopupOpen(false);
+        break;
+      default:
+        break;
+    }
   };
 
-  const handleFlowClick = () => {
-    setIsFlowPopupOpen(true);
-  };
-
-  const closeFlowPopup = () => {
-    setIsFlowPopupOpen(false);
-  };
-
-  const handleReactorClick = () => {
-    setIsReactorPopupOpen(true);
-  };
-
-  const closeReactorPopup = () => {
-    setIsReactorPopupOpen(false);
-  };
-
-  const handleProductClick = () => {
-    setIsProductPopupOpen(true);
-  };
-
-  const closeProductPopup = () => {
-    setIsProductPopupOpen(false);
-  };
-
-  const handleConcentrateClick = () => {
-    setIsConcentratePopupOpen(true);
-  };
-
-  const closeConcentratePopup = () => {
-    setIsConcentratePopupOpen(false);
-  };
+  // Add a loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleRunSimulation = () => {
-    // This function will be implemented to run the simulation
+    // Set loading state to true when simulation starts
+    setIsLoading(true);
     console.log("Running simulation...");
-    // Add your simulation logic here
+    
+    // Simulate API call
+    // Replace this with your actual API call
+    fetch('your-api-endpoint')
+      .then(response => response.json())
+      .then(data => {
+        console.log("Simulation results:", data);
+        // Process your data here
+      })
+      .catch(error => {
+        console.error("Error running simulation:", error);
+      })
+      .finally(() => {
+        // Set loading state back to false when API call completes
+        setIsLoading(false);
+      });
   };
 
   return (
     <div>
       <div className="flow-diagram-container">
         {/* Feed box */}
-        <div className="flow-box feed-box" onClick={handleFeedClick}>
+        <div className="flow-box feed-box" onClick={() => handleBoxClick('feed')}>
           <span className="box-title">Feed</span>
         </div>
 
@@ -96,7 +118,7 @@ const FlowDiagram = () => {
         </svg>
 
         {/* Flow box */}
-        <div className="flow-box flow-input-box" onClick={handleFlowClick}>
+        <div className="flow-box flow-input-box" onClick={() => handleBoxClick('flow')}>
           <span className="box-title">Flow</span>
         </div>
 
@@ -127,7 +149,7 @@ const FlowDiagram = () => {
         </svg>
 
         {/* Array Reactor box */}
-        <div className="flow-box reactor-box" onClick={handleReactorClick}>
+        <div className="flow-box reactor-box" onClick={() => handleBoxClick('reactor')}>
           <span className="box-title">Array Reactor</span>
         </div>
 
@@ -184,35 +206,48 @@ const FlowDiagram = () => {
         </svg>
 
         {/* Product box */}
-        <div className="flow-box product-box" onClick={handleProductClick}>
+        <div className="flow-box product-box" onClick={() => handleBoxClick('product')}>
           <span className="box-title">Product</span>
         </div>
 
         {/* Concentrate box */}
-        <div className="flow-box concentrate-box" onClick={handleConcentrateClick}>
+        <div className="flow-box concentrate-box" onClick={() => handleBoxClick('concentrate')}>
           <span className="box-title">Concentrate</span>
         </div>
 
         {/* Feed Water Data Popup */}
-        <FeedWaterDataPopup isOpen={isFeedPopupOpen} onClose={closeFeedPopup} />
+        <FeedWaterDataPopup isOpen={isFeedPopupOpen} onClose={() => closePopup('feed')} />
         
         {/* Flow Rates Popup */}
-        <FlowRatesPopup isOpen={isFlowPopupOpen} onClose={closeFlowPopup} />
+        <FlowRatesPopup isOpen={isFlowPopupOpen} onClose={() => closePopup('flow')} />
         
         {/* Array Reactor Popup */}
-        <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={closeReactorPopup} />
+        <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={() => closePopup('reactor')} />
         
         {/* Product Data Popup */}
-        <ProductDataPopup isOpen={isProductPopupOpen} onClose={closeProductPopup} />
+        <ProductDataPopup isOpen={isProductPopupOpen} onClose={() => closePopup('product')} />
         
         {/* Concentrate Data Popup */}
-        <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={closeConcentratePopup} />
+        <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={() => closePopup('concentrate')} />
         
         {/* Run Button - Positioned at the bottom */}
         <div className="run-button-container">
-          <button className="run-simulation-button" onClick={handleRunSimulation}>
-            <span className="run-icon">▶</span>
-            <span className="run-text">Run</span>
+          <button 
+            className="run-simulation-button" 
+            onClick={handleRunSimulation}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <span className="loading-spinner"></span>
+                <span className="run-text">Processing...</span>
+              </>
+            ) : (
+              <>
+                <span className="run-icon">▶</span>
+                <span className="run-text">Run</span>
+              </>
+            )}
           </button>
         </div>
         
