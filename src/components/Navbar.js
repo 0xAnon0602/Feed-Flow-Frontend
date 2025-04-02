@@ -10,7 +10,6 @@ function Navbar() {
           id="fileName"
           type="text"
           defaultValue="XYZ SOFTWARE"
-          readOnly
         />
       </div>
       
@@ -20,7 +19,6 @@ function Navbar() {
           id="createdBy"
           type="text"
           defaultValue="ABC"
-          readOnly
         />
       </div>
       

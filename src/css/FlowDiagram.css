@@ -172,3 +172,31 @@
     font-size: 14px;
   }
 }
+
+
+.welcome-guide {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #d6dce3;
+  border-radius: 10px;
+  border: 1px solid #000;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-guide h2 {
+  color: #0056b3;
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.welcome-guide ol {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.welcome-guide li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
