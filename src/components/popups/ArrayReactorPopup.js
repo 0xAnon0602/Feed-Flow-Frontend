@@ -80,10 +80,7 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                         value={stage.elementModel} 
                         onChange={(e) => handleStageChange(index, 'elementModel', e.target.value)}
                       >
-                        <option value="">Select...</option>
-                        <option value="Model 1">Model 1</option>
-                        <option value="Model 2">Model 2</option>
-                        <option value="Model 3">Model 3</option>
+                        <option value="SWC5-LD">SWC5-LD</option>
                       </select>
                     </td>
                     <td>

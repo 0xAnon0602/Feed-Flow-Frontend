@@ -50,7 +50,7 @@ body {
 /* Position each box */
 .feed-box {
   top: 150px;
-  left: 40px;
+  left: 20px;
 }
 .flow-input-box {
   top: 150px;
@@ -58,15 +58,15 @@ body {
 }
 .reactor-box {
   top: 150px;
-  left: 360px;
+  left: 380px;
 }
 .product-box {
-  top: 60px;
-  left: 550px;
+  top: 65px;
+  left: 570px;
 }
 .concentrate-box {
-  top: 240px;
-  left: 550px;
+  top: 245px;
+  left: 570px;
 }
 
 /* Arrows */
@@ -82,32 +82,31 @@ body {
 /* Feed->Flow arrow */
 .arrow-feed-flow {
   top: 170px; /* This lines up with the center of the feed/flow boxes */
-  left: 140px;
+  left: 122px;
 }
 
 /* Flow->Reactor arrow */
 .arrow-flow-reactor {
   top: 170px;
-  left: 300px;
+  left: 302px;
 }
 
 /* Reactor->Product arrow */
 .arrow-reactor-product {
-  top: 160px;
-  left: 480px;
+  top: 165px;
+  left: 490px;
   width: 140px; /* bigger so we can angle to product */
   height: 80px;
 }
 
 /* Reactor->Concentrate arrow */
 .arrow-reactor-concentrate {
-  top: 160px;
-  left: 480px;
+  top: 165px;
+  left: 490px;
   width: 140px; /* bigger so we can angle to concentrate */
   height: 150px;
 }
 
-/* Add this to your existing FlowDiagram.css file */
 
 /* Run button container for positioning at the bottom */
 .run-button-container {

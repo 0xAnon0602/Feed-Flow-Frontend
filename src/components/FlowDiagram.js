@@ -112,7 +112,6 @@ const FlowDiagram = () => {
             y2="10"
             stroke="#000"
             strokeWidth="2"
-            strokeDasharray="5,3"
             markerEnd="url(#arrowhead1)"
           />
         </svg>
@@ -143,7 +142,6 @@ const FlowDiagram = () => {
             y2="10"
             stroke="#000"
             strokeWidth="2"
-            strokeDasharray="5,3"
             markerEnd="url(#arrowhead2)"
           />
         </svg>
@@ -174,7 +172,6 @@ const FlowDiagram = () => {
             y2="-60"
             stroke="#000"
             strokeWidth="2"
-            strokeDasharray="5,3"
             markerEnd="url(#arrowhead3)"
           />
         </svg>
@@ -200,7 +197,6 @@ const FlowDiagram = () => {
             y2="90"
             stroke="#000"
             strokeWidth="2"
-            strokeDasharray="5,3"
             markerEnd="url(#arrowhead4)"
           />
         </svg>
