@@ -160,8 +160,8 @@ const FlowDiagram = () => {
         
         {/* Concentrate Data Popup */}
         <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={() => closePopup('concentrate')} />
-        
-        {/* Run Button - Positioned at the bottom */}
+      
+        {/* Run Button - Moved back inside the flow-diagram-container */}
         <div className="run-button-container">
           <button 
             className="run-simulation-button" 
