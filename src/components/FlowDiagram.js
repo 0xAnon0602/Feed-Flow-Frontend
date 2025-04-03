@@ -255,14 +255,12 @@ const FlowDiagram = () => {
 
       {/* Welcome Guide */}
       <div className="welcome-guide">
-        <h2>Welcome! To get started on your new project:</h2>
+        <h2>Our software operates as follows:</h2>
         <ol>
-          <li>Specify the feed flowrate or product flowrate.</li>
-          <li>
-            Select the technologies by dragging and dropping the
-            corresponding process icons between the two blue arrows.
-          </li>
-          <li>Select a water type from the dropdown list for UF, RO or ROSC.</li>
+          <li>Select the feed and input all relevant water ions and properties.</li>
+          <li>Navigate to the flow section and specify the desired product or feed flow rate.</li>
+          <li>In the array reactor module, configure the number of pressure vessels and elements with membranes.</li>
+          <li>Run the simulation to obtain results for both the product and concentrate streams.</li>
         </ol>
       </div>
 
