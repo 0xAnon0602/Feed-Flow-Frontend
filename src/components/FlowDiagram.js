@@ -88,126 +88,61 @@ const FlowDiagram = () => {
       <div className="flow-diagram-container">
         {/* Feed box */}
         <div className="flow-box feed-box" onClick={() => handleBoxClick('feed')}>
+          <div className="icon-container">
+            <div className="water-drop-icon"></div>
+          </div>
           <span className="box-title">Feed</span>
         </div>
 
         {/* Arrow: Feed -> Flow */}
-        <svg className="arrow arrow-feed-flow">
-          <defs>
-            <marker
-              id="arrowhead1"
-              markerWidth="6"
-              markerHeight="6"
-              refX="3"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0,0 L0,6 L6,3 Z" fill="#000" />
-            </marker>
-          </defs>
-          <line
-            x1="0"
-            y1="10"
-            x2="100"
-            y2="10"
-            stroke="#000"
-            strokeWidth="2"
-            markerEnd="url(#arrowhead1)"
-          />
-        </svg>
+        <div className="arrow-container feed-to-flow">
+          <div className="arrow-line"></div>
+        </div>
 
         {/* Flow box */}
         <div className="flow-box flow-input-box" onClick={() => handleBoxClick('flow')}>
+          <div className="icon-container">
+            <div className="flow-meter-icon"></div>
+          </div>
           <span className="box-title">Flow</span>
         </div>
 
         {/* Arrow: Flow -> Array Reactor */}
-        <svg className="arrow arrow-flow-reactor">
-          <defs>
-            <marker
-              id="arrowhead2"
-              markerWidth="6"
-              markerHeight="6"
-              refX="3"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0,0 L0,6 L6,3 Z" fill="#000" />
-            </marker>
-          </defs>
-          <line
-            x1="0"
-            y1="10"
-            x2="100"
-            y2="10"
-            stroke="#000"
-            strokeWidth="2"
-            markerEnd="url(#arrowhead2)"
-          />
-        </svg>
+        <div className="arrow-container flow-to-reactor">
+          <div className="arrow-line"></div>
+        </div>
 
         {/* Array Reactor box */}
         <div className="flow-box reactor-box" onClick={() => handleBoxClick('reactor')}>
+          <div className="icon-container">
+            <div className="reactor-icon"></div>
+          </div>
           <span className="box-title">Array Reactor</span>
         </div>
 
         {/* Arrow: Array Reactor -> Product */}
-        <svg className="arrow arrow-reactor-product">
-          <defs>
-            <marker
-              id="arrowhead3"
-              markerWidth="6"
-              markerHeight="6"
-              refX="3"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0,0 L0,6 L6,3 Z" fill="#000" />
-            </marker>
-          </defs>
-          <line
-            x1="0"
-            y1="10"
-            x2="120"
-            y2="-60"
-            stroke="#000"
-            strokeWidth="2"
-            markerEnd="url(#arrowhead3)"
-          />
-        </svg>
-
-        {/* Arrow: Array Reactor -> Concentrate */}
-        <svg className="arrow arrow-reactor-concentrate">
-          <defs>
-            <marker
-              id="arrowhead4"
-              markerWidth="6"
-              markerHeight="6"
-              refX="3"
-              refY="3"
-              orient="auto"
-            >
-              <path d="M0,0 L0,6 L6,3 Z" fill="#000" />
-            </marker>
-          </defs>
-          <line
-            x1="0"
-            y1="10"
-            x2="120"
-            y2="90"
-            stroke="#000"
-            strokeWidth="2"
-            markerEnd="url(#arrowhead4)"
-          />
-        </svg>
+        <div className="arrow-container reactor-to-product">
+          <div className="arrow-line"></div>
+        </div>
 
         {/* Product box */}
         <div className="flow-box product-box" onClick={() => handleBoxClick('product')}>
+          <div className="icon-container">
+            <div className="product-icon"></div>
+          </div>
           <span className="box-title">Product</span>
+        </div>
+
+        {/* Arrow: Array Reactor -> Concentrate */}
+        <div className="arrow-container reactor-to-concentrate">
+          <div className="arrow-line"></div>
         </div>
 
         {/* Concentrate box */}
         <div className="flow-box concentrate-box" onClick={() => handleBoxClick('concentrate')}>
+          <div className="icon-container">
+            <div className="concentrate-icon"></div>
+          </div>
           <span className="box-title">Concentrate</span>
         </div>
 
@@ -246,7 +181,6 @@ const FlowDiagram = () => {
             )}
           </button>
         </div>
-        
       </div>
 
       {/* Welcome Guide */}
@@ -259,7 +193,6 @@ const FlowDiagram = () => {
           <li>Run the simulation to obtain results for both the product and concentrate streams.</li>
         </ol>
       </div>
-
     </div>
   );
 };

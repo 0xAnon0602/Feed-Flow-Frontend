@@ -50,7 +50,25 @@ const PredictionForm = () => {
       setError(null);
       setPredictions(null);
       
-      const result = await predictROPerformance(formData);
+      // Define the correct order of keys
+      const orderedKeys = [
+        'Feed Flow (m3/hr)', 'Feed Temperature', 'Feed water pH', 'Pass Stage', 'Pressure Vessel', 
+        'Elements', 'Element age(years)', 'Recovery(%)', 'Ca_FW', 'Mg_FW', 'Na_FW', 'K_FW', 
+        'NH4_FW', 'Ba_FW', 'Sr_FW', 'H_FW', 'CO3_FW', 'HCO3_FW', 'SO4_FW', 'Cl_FW', 'F_FW',
+        'NO3_FW', 'PO4_FW', 'OH_FW', 'SiO2_FW', 'B_FW', 'CO2_FW', 'NH3_FW', 'Feed Water TDS',
+        'CaSO4 / ksp * 100, %_FW', 'SrSO4 / ksp * 100, %_FW', 'BaSO4 / ksp * 100, %_FW', 
+        'SiO2 saturation, %_FW', 'CaF2 / ksp * 100, %_FW'
+      ];
+      
+      // Create an ordered formData object
+      const orderedFormData = {};
+      orderedKeys.forEach(key => {
+        if (formData.hasOwnProperty(key)) {
+          orderedFormData[key] = formData[key];
+        }
+      });
+      
+      const result = await predictROPerformance(orderedFormData);
       setPredictions(result.predictions);
       setLoading(false);
     } catch (err) {

@@ -235,3 +235,266 @@ body {
   transform: none;
   animation: none;
 }
+
+/* Box styling */
+.flow-box {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #f0f8ff;
+  border: 2px solid #2c3e50;
+}
+
+.flow-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon containers */
+.icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Feed icon - water drop */
+.water-drop-icon {
+  width: 40px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+}
+
+.water-drop-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Flow icon - flow meter */
+.flow-meter-icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #2c3e50;
+  border-radius: 50%;
+  position: relative;
+}
+
+.flow-meter-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 3px;
+  background-color: #2c3e50;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Reactor icon */
+.reactor-icon {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid #2c3e50;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reactor-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: #3498db;
+}
+
+/* Product icon - test tube */
+.product-icon {
+  width: 30px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid #2c3e50;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #3498db;
+}
+
+/* Concentrate icon - water drop with circle */
+.concentrate-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #3498db;
+  border-radius: 50%;
+  position: relative;
+}
+
+.concentrate-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Professional arrow styling */
+.arrow-container {
+  position: absolute;
+  height: 2px;
+  background-color: #2c3e50;
+}
+
+.arrow-line::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #2c3e50;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* Feed->Flow arrow - positioned to start from the center of feed box */
+.feed-to-flow {
+  top: 200px;
+  left: 120px;
+  width: 80px;
+  z-index: -1;
+}
+
+/* Flow->Reactor arrow - positioned to start from the center of flow box */
+.flow-to-reactor {
+  top: 200px;
+  left: 300px;
+  width: 80px;
+  z-index: -1;
+
+}
+
+/* Reactor->Product arrow - positioned to start from the center of reactor box */
+.reactor-to-product {
+  top: 180px;
+  left: 480px;
+  width: 120px;
+  transform: rotate(-30deg);
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* Reactor->Concentrate arrow - positioned to start from the center of reactor box */
+.reactor-to-concentrate {
+  top: 205px;
+  left: 480px;
+  width: 120px;
+  transform: rotate(30deg);
+  transform-origin: left center;
+  z-index: -1;
+
+}
+
+.horizontal {
+  width: 80px;
+  align-self: center;
+}
+
+.diagonal-up {
+  width: 120px;
+  transform: rotate(-30deg);
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.diagonal-down {
+  width: 120px;
+  transform: rotate(30deg);
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+/* Flow diagram container layout */
+.flow-diagram-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Run button styling */
+.run-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.run-simulation-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.run-simulation-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.run-icon {
+  margin-right: 8px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
