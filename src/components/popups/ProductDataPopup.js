@@ -83,12 +83,12 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     </td>
                   </tr> 
                   <tr>
-                    <td>Ammonia - N (NH4)</td>
+                  <td>Ammonium - N (NH4)</td>
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonia} 
-                        onChange={(e) => handleIonChange('ammonia', e.target.value)}
+                        value={ionValues.ammonium} 
+                        onChange={(e) => handleIonChange('ammonium', e.target.value)}
                         readOnly
                       />
                     </td>
@@ -116,27 +116,17 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     </td>
                   </tr>
                   <tr>
-                    <td>Iron (Fe)</td>
-                    <td>
+                  <td>Hydrogen (H)</td>
+                  <td>
                       <input 
                         type="text" 
-                        value={ionValues.iron} 
-                        onChange={(e) => handleIonChange('iron', e.target.value)}
+                        value={ionValues.hydrogen} 
+                        onChange={(e) => handleIonChange('hydrogen', e.target.value)}
                         readOnly
                       />
                     </td>
                   </tr>
-                  <tr>
-                    <td>Manganese (Mn)</td>
-                    <td>
-                      <input 
-                        type="text" 
-                        value={ionValues.manganese} 
-                        onChange={(e) => handleIonChange('manganese', e.target.value)}
-                        readOnly
-                      />
-                    </td>
-                  </tr>
+
                   <tr className="separator-row">
                     <td colSpan="2"></td>
                   </tr>
@@ -185,12 +175,12 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     </td>
                   </tr>
                   <tr>
-                    <td>Bromide (Br)</td>
-                    <td>
-                      <input 
+                  <td>Hydroxide (OH)</td>
+                  <td>
+                  <input 
                         type="text" 
-                        value={ionValues.bromide} 
-                        onChange={(e) => handleIonChange('bromide', e.target.value)}
+                        value={ionValues.hydroxide} 
+                        onChange={(e) => handleIonChange('hydroxide', e.target.value)}
                         readOnly
                       />
                     </td>
@@ -229,17 +219,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     </td>
                   </tr>
                   <tr>
-                    <td>Hydrogen Sulfide (H2S)</td>
-                    <td>
-                      <input 
-                        type="text" 
-                        value={ionValues.hydrogenSulfide} 
-                        onChange={(e) => handleIonChange('hydrogenSulfide', e.target.value)}
-                        readOnly
-                      />
-                    </td>
-                  </tr>
-                  <tr>
                     <td>Bicarbonate (HCO3)</td>
                     <td>
                       <input 
@@ -268,6 +247,17 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                         type="text" 
                         value={ionValues.carbonate} 
                         onChange={(e) => handleIonChange('carbonate', e.target.value)}
+                        readOnly
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ammonia (NH3)</td>
+                    <td>
+                      <input 
+                        type="text" 
+                        value={ionValues.ammonia} 
+                        onChange={(e) => handleIonChange('ammonia', e.target.value)}
                         readOnly
                       />
                     </td>
