@@ -5,6 +5,7 @@ import FlowRatesPopup from "./popups/FlowRatesPopup";
 import ArrayReactorPopup from "./popups/ArrayReactorPopup";
 import ProductDataPopup from "./popups/ProductDataPopup";
 import ConcentrateDataPopup from "./popups/ConcentrateDataPopup";
+import SimulationInsights from "./SimulationInsights";
 
 const FlowDiagram = () => {
   const [isFeedPopupOpen, setIsFeedPopupOpen] = useState(false);
@@ -85,113 +86,122 @@ const FlowDiagram = () => {
 
   return (
     <div>
-      <div className="flow-diagram-container">
-        {/* Feed box */}
-        <div className="flow-box feed-box" onClick={() => handleBoxClick('feed')}>
-          <div className="icon-container">
-            <div className="water-drop-icon"></div>
+      <div className="flow-diagram-layout">
+        <div className="flow-diagram-main">
+          <div className="flow-diagram-container">
+            
+            {/* Feed box */}
+            <div className="flow-box feed-box" onClick={() => handleBoxClick('feed')}>
+              <div className="icon-container">
+                <div className="water-drop-icon"></div>
+              </div>
+              <span className="box-title">Feed</span>
+            </div>
+
+            {/* Arrow: Feed -> Flow */}
+            <div className="arrow-container feed-to-flow">
+              <div className="arrow-line"></div>
+            </div>
+
+            {/* Flow box */}
+            <div className="flow-box flow-input-box" onClick={() => handleBoxClick('flow')}>
+              <div className="icon-container">
+                <div className="flow-meter-icon"></div>
+              </div>
+              <span className="box-title">Flow</span>
+            </div>
+
+            {/* Arrow: Flow -> Array Reactor */}
+            <div className="arrow-container flow-to-reactor">
+              <div className="arrow-line"></div>
+            </div>
+
+            {/* Array Reactor box */}
+            <div className="flow-box reactor-box" onClick={() => handleBoxClick('reactor')}>
+              <div className="icon-container">
+                <div className="reactor-icon"></div>
+              </div>
+              <span className="box-title">Array Reactor</span>
+            </div>
+
+            {/* Arrow: Array Reactor -> Product */}
+            <div className="arrow-container reactor-to-product">
+              <div className="arrow-line"></div>
+            </div>
+
+            {/* Product box */}
+            <div className="flow-box product-box" onClick={() => handleBoxClick('product')}>
+              <div className="icon-container">
+                <div className="product-icon"></div>
+              </div>
+              <span className="box-title">Product</span>
+            </div>
+
+            {/* Arrow: Array Reactor -> Concentrate */}
+            <div className="arrow-container reactor-to-concentrate">
+              <div className="arrow-line"></div>
+            </div>
+
+            {/* Concentrate box */}
+            <div className="flow-box concentrate-box" onClick={() => handleBoxClick('concentrate')}>
+              <div className="icon-container">
+                <div className="concentrate-icon"></div>
+              </div>
+              <span className="box-title">Concentrate</span>
+            </div>
+
+            {/* Feed Water Data Popup */}
+            <FeedWaterDataPopup isOpen={isFeedPopupOpen} onClose={() => closePopup('feed')} />
+            
+            {/* Flow Rates Popup */}
+            <FlowRatesPopup isOpen={isFlowPopupOpen} onClose={() => closePopup('flow')} />
+            
+            {/* Array Reactor Popup */}
+            <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={() => closePopup('reactor')} />
+            
+            {/* Product Data Popup */}
+            <ProductDataPopup isOpen={isProductPopupOpen} onClose={() => closePopup('product')} />
+            
+            {/* Concentrate Data Popup */}
+            <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={() => closePopup('concentrate')} />
+          
+            {/* Run Button - Moved back inside the flow-diagram-container */}
+            <div className="run-button-container">
+              <button 
+                className="run-simulation-button" 
+                onClick={handleRunSimulation}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <span className="loading-spinner"></span>
+                    <span className="run-text">Processing...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="run-icon">▶</span>
+                    <span className="run-text">Run</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
-          <span className="box-title">Feed</span>
-        </div>
 
-        {/* Arrow: Feed -> Flow */}
-        <div className="arrow-container feed-to-flow">
-          <div className="arrow-line"></div>
-        </div>
-
-        {/* Flow box */}
-        <div className="flow-box flow-input-box" onClick={() => handleBoxClick('flow')}>
-          <div className="icon-container">
-            <div className="flow-meter-icon"></div>
+          {/* Welcome Guide */}
+          <div className="welcome-guide">
+            <h2>Our software operates as follows:</h2>
+            <ol>
+              <li>Select the feed and input all relevant water ions and properties.</li>
+              <li>Navigate to the flow section and specify the desired product or feed flow rate.</li>
+              <li>In the array reactor module, configure the number of pressure vessels and elements with membranes.</li>
+              <li>Run the simulation to obtain results for both the product and concentrate streams.</li>
+            </ol>
           </div>
-          <span className="box-title">Flow</span>
+          
         </div>
-
-        {/* Arrow: Flow -> Array Reactor */}
-        <div className="arrow-container flow-to-reactor">
-          <div className="arrow-line"></div>
-        </div>
-
-        {/* Array Reactor box */}
-        <div className="flow-box reactor-box" onClick={() => handleBoxClick('reactor')}>
-          <div className="icon-container">
-            <div className="reactor-icon"></div>
-          </div>
-          <span className="box-title">Array Reactor</span>
-        </div>
-
-        {/* Arrow: Array Reactor -> Product */}
-        <div className="arrow-container reactor-to-product">
-          <div className="arrow-line"></div>
-        </div>
-
-        {/* Product box */}
-        <div className="flow-box product-box" onClick={() => handleBoxClick('product')}>
-          <div className="icon-container">
-            <div className="product-icon"></div>
-          </div>
-          <span className="box-title">Product</span>
-        </div>
-
-        {/* Arrow: Array Reactor -> Concentrate */}
-        <div className="arrow-container reactor-to-concentrate">
-          <div className="arrow-line"></div>
-        </div>
-
-        {/* Concentrate box */}
-        <div className="flow-box concentrate-box" onClick={() => handleBoxClick('concentrate')}>
-          <div className="icon-container">
-            <div className="concentrate-icon"></div>
-          </div>
-          <span className="box-title">Concentrate</span>
-        </div>
-
-        {/* Feed Water Data Popup */}
-        <FeedWaterDataPopup isOpen={isFeedPopupOpen} onClose={() => closePopup('feed')} />
         
-        {/* Flow Rates Popup */}
-        <FlowRatesPopup isOpen={isFlowPopupOpen} onClose={() => closePopup('flow')} />
-        
-        {/* Array Reactor Popup */}
-        <ArrayReactorPopup isOpen={isReactorPopupOpen} onClose={() => closePopup('reactor')} />
-        
-        {/* Product Data Popup */}
-        <ProductDataPopup isOpen={isProductPopupOpen} onClose={() => closePopup('product')} />
-        
-        {/* Concentrate Data Popup */}
-        <ConcentrateDataPopup isOpen={isConcentratePopupOpen} onClose={() => closePopup('concentrate')} />
-      
-        {/* Run Button - Moved back inside the flow-diagram-container */}
-        <div className="run-button-container">
-          <button 
-            className="run-simulation-button" 
-            onClick={handleRunSimulation}
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <>
-                <span className="loading-spinner"></span>
-                <span className="run-text">Processing...</span>
-              </>
-            ) : (
-              <>
-                <span className="run-icon">▶</span>
-                <span className="run-text">Run</span>
-              </>
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Welcome Guide */}
-      <div className="welcome-guide">
-        <h2>Our software operates as follows:</h2>
-        <ol>
-          <li>Select the feed and input all relevant water ions and properties.</li>
-          <li>Navigate to the flow section and specify the desired product or feed flow rate.</li>
-          <li>In the array reactor module, configure the number of pressure vessels and elements with membranes.</li>
-          <li>Run the simulation to obtain results for both the product and concentrate streams.</li>
-        </ol>
+        {/* SimulationInsights moved to the right */}
+        <SimulationInsights />
       </div>
     </div>
   );
