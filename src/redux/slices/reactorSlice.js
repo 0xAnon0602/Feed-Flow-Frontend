@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
-    stage: 1,
-    pressureVessels: 6,
-    elementsPerVessel:6,
+    'Pass Stage': 1,
+    'Pressure Vessel': 6,
+    'Elements':6,
     elementModel: "",
-    elementAge: 2.5,
+    'Element age(years)': 2.5,
   }
 ];
 
@@ -20,14 +20,11 @@ const reactorSlice = createSlice({
     },
     addStage: (state) => {
       const newStage = {
-        stage: state.length + 1,
-        pressureVessels: 0,
-        elementsPerVessel: 0,
+        'Pass Stage': state.length + 1,
+        'Pressure Vessel': 0,
+        'Elements': 0,
         elementModel: "",
-        elementAge: 0.00,
-        application: "",
-        elementGroup: "",
-        fluxAnnualChange: 0.00
+        'Element age(years)': 0.00,
       };
       state.push(newStage);
     },

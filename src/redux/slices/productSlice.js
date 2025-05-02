@@ -24,7 +24,6 @@ const initialState = {
     ammonia: "0.00",
   },
   parameters: {
-    feedFlow: "0.00",
     tds: "0.00",
     specificEngergy: "0.0",
     feedPressure: "0.0",

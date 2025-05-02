@@ -269,16 +269,6 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
               <div className="parameters-header">Parameters</div>
               
               <div className="parameter-row">
-                <label>Feed Flow</label>
-                <input 
-                  type="text" 
-                  value={parameters.feedFlow} 
-                  onChange={(e) => handleParameterChange('feedFlow', e.target.value)}
-                  readOnly
-                />
-              </div>
-              
-              <div className="parameter-row">
                 <label>Concentrate TDS</label>
                 <input 
                   type="text" 

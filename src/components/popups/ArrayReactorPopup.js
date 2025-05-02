@@ -46,18 +46,18 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
               <tbody>
                 {stageData.map((stage, index) => (
                   <tr key={index}>
-                    <td>{stage.stage}</td>
+                    <td>{stage['Pass Stage']}</td>
                     <td>
                       <div className="number-input-container">
                         <input 
                           type="number" 
-                          value={stage.pressureVessels} 
-                          onChange={(e) => handleStageChange(index, 'pressureVessels', parseInt(e.target.value) || 0)}
+                          value={stage['Pressure Vessel']} 
+                          onChange={(e) => handleStageChange(index, 'Pressure Vessel', parseInt(e.target.value) || 0)}
                           min="0"
                         />
                         <div className="number-controls">
-                          <button onClick={() => handleStageChange(index, 'pressureVessels', stage.pressureVessels + 1)}>▲</button>
-                          <button onClick={() => handleStageChange(index, 'pressureVessels', Math.max(0, stage.pressureVessels - 1))}>▼</button>
+                          <button onClick={() => handleStageChange(index, 'Pressure Vessel', stage['Pressure Vessel'] + 1)}>▲</button>
+                          <button onClick={() => handleStageChange(index, 'Pressure Vessel', Math.max(0, stage['Pressure Vessel'] - 1))}>▼</button>
                         </div>
                       </div>
                     </td>
@@ -65,13 +65,13 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                       <div className="number-input-container">
                         <input 
                           type="number" 
-                          value={stage.elementsPerVessel} 
-                          onChange={(e) => handleStageChange(index, 'elementsPerVessel', parseInt(e.target.value) || 0)}
+                          value={stage['Elements']} 
+                          onChange={(e) => handleStageChange(index, 'Elements', parseInt(e.target.value) || 0)}
                           min="0"
                         />
                         <div className="number-controls">
-                          <button onClick={() => handleStageChange(index, 'elementsPerVessel', stage.elementsPerVessel + 1)}>▲</button>
-                          <button onClick={() => handleStageChange(index, 'elementsPerVessel', Math.max(0, stage.elementsPerVessel - 1))}>▼</button>
+                          <button onClick={() => handleStageChange(index, 'Elements', stage['Elements'] + 1)}>▲</button>
+                          <button onClick={() => handleStageChange(index, 'Elements', Math.max(0, stage['Elements'] - 1))}>▼</button>
                         </div>
                       </div>
                     </td>
@@ -86,8 +86,8 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="number" 
-                        value={stage.elementAge} 
-                        onChange={(e) => handleStageChange(index, 'elementAge', parseFloat(e.target.value) || 0)}
+                        value={stage['Element age(years)']} 
+                        onChange={(e) => handleStageChange(index, 'Element age(years)', parseFloat(e.target.value) || 0)}
                         step="0.01"
                         min="0"
                       />

@@ -43,11 +43,11 @@ const FlowRatesPopup = ({ isOpen, onClose }) => {
                   <div className="flow-input">
                     <input 
                       type="text" 
-                      value={flowValues.feedFlow} 
-                      onChange={(e) => handleFlowChange("feedFlow", e.target.value)}
+                      value={flowValues['Feed Flow (m3/hr)']} 
+                      onChange={(e) => handleFlowChange('Feed Flow (m3/hr)', e.target.value)}
                       disabled={selectedOption !== "feed"}
                     />
-                    <span className="flow-unit">m<sup>3</sup></span>
+                    <span className="flow-unit">m<sup>3</sup>/hr</span>
                   </div>
               </div>
 

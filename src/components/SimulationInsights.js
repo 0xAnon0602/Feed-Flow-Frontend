@@ -5,7 +5,7 @@ import '../css/SimulationInsights.css';
 
 const SimulationInsights = () => {
 
-  const recovery = useSelector(state => state.feedWater.parameters.recovery)
+  const recovery = useSelector(state => state.feedWater.parameters['Recovery(%)'])
 
   return (
     <div className="simulation-insights">

@@ -51,8 +51,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.calcium} 
-                        onChange={(e) => handleIonChange('calcium', e.target.value)}
+                        value={ionValues.Ca_FW} 
+                        onChange={(e) => handleIonChange('Ca_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -61,8 +61,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.magnesium} 
-                        onChange={(e) => handleIonChange('magnesium', e.target.value)}
+                        value={ionValues.Mg_FW} 
+                        onChange={(e) => handleIonChange('Mg_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -71,8 +71,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sodium} 
-                        onChange={(e) => handleIonChange('sodium', e.target.value)}
+                        value={ionValues.Na_FW} 
+                        onChange={(e) => handleIonChange('Na_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -81,8 +81,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.potassium} 
-                        onChange={(e) => handleIonChange('potassium', e.target.value)}
+                        value={ionValues.K_FW} 
+                        onChange={(e) => handleIonChange('K_FW', e.target.value)}
                       />
                     </td>
                   </tr> 
@@ -91,7 +91,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonium} 
+                        value={ionValues.NH4_FW} 
                         onChange={(e) => handleIonChange('ammonium', e.target.value)}
                       />
                     </td>
@@ -101,8 +101,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.barium} 
-                        onChange={(e) => handleIonChange('barium', e.target.value)}
+                        value={ionValues.Ba_FW} 
+                        onChange={(e) => handleIonChange('Ba_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -111,7 +111,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.strontium} 
+                        value={ionValues.Sr_FW} 
                         onChange={(e) => handleIonChange('strontium', e.target.value)}
                       />
                     </td>
@@ -121,8 +121,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.hydrogen} 
-                        onChange={(e) => handleIonChange('hydrogen', e.target.value)}
+                        value={ionValues.H_FW} 
+                        onChange={(e) => handleIonChange('H_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -134,8 +134,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sulfate} 
-                        onChange={(e) => handleIonChange('sulfate', e.target.value)}
+                        value={ionValues.SO4_FW} 
+                        onChange={(e) => handleIonChange('SO4_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -144,8 +144,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.chloride} 
-                        onChange={(e) => handleIonChange('chloride', e.target.value)}
+                        value={ionValues.Cl_FW} 
+                        onChange={(e) => handleIonChange('Cl_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -154,8 +154,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.fluoride} 
-                        onChange={(e) => handleIonChange('fluoride', e.target.value)}
+                        value={ionValues.F_FW} 
+                        onChange={(e) => handleIonChange('F_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -164,8 +164,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.nitrate} 
-                        onChange={(e) => handleIonChange('nitrate', e.target.value)}
+                        value={ionValues.NO3_FW} 
+                        onChange={(e) => handleIonChange('NO3_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -174,8 +174,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.hydroxide} 
-                        onChange={(e) => handleIonChange('hydroxide', e.target.value)}
+                        value={ionValues.OH_FW} 
+                        onChange={(e) => handleIonChange('OH_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -184,8 +184,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.phosphate} 
-                        onChange={(e) => handleIonChange('phosphate', e.target.value)}
+                        value={ionValues.PO4_FW} 
+                        onChange={(e) => handleIonChange('PO4_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -194,7 +194,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.boron} 
+                        value={ionValues.B_FW} 
                         onChange={(e) => handleIonChange('boron', e.target.value)}
                       />
                     </td>
@@ -204,8 +204,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.silica} 
-                        onChange={(e) => handleIonChange('silica', e.target.value)}
+                        value={ionValues.SiO2_FW} 
+                        onChange={(e) => handleIonChange('SiO2_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -214,7 +214,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.bicarbonate} 
+                        value={ionValues.HCO3_FW} 
                         onChange={(e) => handleIonChange('bicarbonate', e.target.value)}
                       />
                     </td>
@@ -224,8 +224,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonDioxide} 
-                        onChange={(e) => handleIonChange('carbonDioxide', e.target.value)}
+                        value={ionValues.CO2_FW} 
+                        onChange={(e) => handleIonChange('CO2_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -234,8 +234,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonate} 
-                        onChange={(e) => handleIonChange('carbonate', e.target.value)}
+                        value={ionValues.CO3_FW} 
+                        onChange={(e) => handleIonChange('CO3_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -244,8 +244,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonia} 
-                        onChange={(e) => handleIonChange('ammonia', e.target.value)}
+                        value={ionValues.NH3_FW} 
+                        onChange={(e) => handleIonChange('NH3_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -260,8 +260,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 <label>pH</label>
                 <input 
                   type="text" 
-                  value={parameters.ph} 
-                  onChange={(e) => handleParameterChange('ph', e.target.value)}
+                  value={parameters['Feed water pH']} 
+                  onChange={(e) => handleParameterChange('Feed water pH', e.target.value)}
                 />
               </div>
               
@@ -269,8 +269,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 <label>Temperature (°C)</label>
                 <input 
                   type="text" 
-                  value={parameters.temperature} 
-                  onChange={(e) => handleParameterChange('temperature', e.target.value)}
+                  value={parameters['Feed Temperature']} 
+                  onChange={(e) => handleParameterChange('Feed Temperature', e.target.value)}
                 />
               </div>
               
@@ -278,8 +278,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 <label>Recovery (%)</label>
                 <input 
                   type="text" 
-                  value={parameters.recovery} 
-                  onChange={(e) => handleParameterChange('recovery', e.target.value)}
+                  value={parameters['Recovery(%)']} 
+                  onChange={(e) => handleParameterChange('Recovery(%)', e.target.value)}
                 />
 
               </div>
@@ -288,6 +288,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={feedTds.toFixed(2)} 
+                  onChange={(e) => handleParameterChange('Feed Water TDS', feedTds)}
                   readOnly
                 />
               </div>
@@ -299,8 +300,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   <span>
                     <input
                       type="text"
-                      value={ionValues.baso4 || "0.00"}
-                      onChange={(e) => handleIonChange('baso4', e.target.value)}
+                      value={ionValues['BaSO4 / ksp * 100, %_FW'] || "0.00"}
+                      onChange={(e) => handleIonChange('BaSO4 / ksp * 100, %_FW', e.target.value)}
                       className="saturation-input"
                     /> 
                   </span>
@@ -310,8 +311,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   <span>
                     <input
                       type="text"
-                      value={ionValues.caf2 || "0.00"}
-                      onChange={(e) => handleIonChange('caf2', e.target.value)}
+                      value={ionValues['CaF2 / ksp * 100, %_FW'] || "0.00"}
+                      onChange={(e) => handleIonChange('CaF2 / ksp * 100, %_FW', e.target.value)}
                       className="saturation-input"
                     /> 
                   </span>
@@ -321,8 +322,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   <span>
                     <input
                       type="text"
-                      value={ionValues.caso4 || "0.00"}
-                      onChange={(e) => handleIonChange('caso4', e.target.value)}
+                      value={ionValues['CaSO4 / ksp * 100, %_FW'] || "0.00"}
+                      onChange={(e) => handleIonChange('CaSO4 / ksp * 100, %_FW', e.target.value)}
                       className="saturation-input"
                     /> 
                   </span>
@@ -332,8 +333,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   <span>
                     <input
                       type="text"
-                      value={ionValues.sio2 || "0.00"}
-                      onChange={(e) => handleIonChange('sio2', e.target.value)}
+                      value={ionValues['SiO2 saturation, %_FW'] || "0.00"}
+                      onChange={(e) => handleIonChange('SiO2 saturation, %_FW', e.target.value)}
                       className="saturation-input"
                     /> 
                   </span>
@@ -343,8 +344,8 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   <span>
                     <input
                       type="text"
-                      value={ionValues.srso4 || "0.00"}
-                      onChange={(e) => handleIonChange('srso4', e.target.value)}
+                      value={ionValues['SrSO4 / ksp * 100, %_FW'] || "0.00"}
+                      onChange={(e) => handleIonChange('SrSO4 / ksp * 100, %_FW' , e.target.value)}
                       className="saturation-input"
                     /> 
                   </span>

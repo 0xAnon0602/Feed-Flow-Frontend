@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "../css/FlowDiagram.css";
+import { useSelector } from 'react-redux';
+import { fetchInputSchema, predictROPerformance } from '../services/api';
 import FeedWaterDataPopup from "./popups/FeedWaterDataPopup";
 import FlowRatesPopup from "./popups/FlowRatesPopup";
 import ArrayReactorPopup from "./popups/ArrayReactorPopup";
 import ProductDataPopup from "./popups/ProductDataPopup";
 import ConcentrateDataPopup from "./popups/ConcentrateDataPopup";
 import SimulationInsights from "./SimulationInsights";
+import "../css/FlowDiagram.css";
 
 const FlowDiagram = () => {
   const [isFeedPopupOpen, setIsFeedPopupOpen] = useState(false);
@@ -13,6 +15,46 @@ const FlowDiagram = () => {
   const [isReactorPopupOpen, setIsReactorPopupOpen] = useState(false);
   const [isProductPopupOpen, setIsProductPopupOpen] = useState(false);
   const [isConcentratePopupOpen, setIsConcentratePopupOpen] = useState(false);
+
+  const { ionValues, parameters } = useSelector(state => state.feedWater);
+  const flowValues = useSelector(state => state.flowRates.flowValues);
+  const stageData = useSelector(state => state.reactor[0]);
+
+  const sortData = () => {
+
+    const rawValues = { 
+      ...ionValues, 
+      ...parameters, 
+      ...flowValues, 
+      ...stageData 
+    };
+    
+    const formData = Object.fromEntries(
+      Object.entries(rawValues).map(([key, val]) => {
+        const floatVal = parseFloat(val);
+        return [key, Number.isNaN(floatVal) ? val : floatVal];
+      })
+    );
+
+    const orderedKeys = [
+      'Feed Flow (m3/hr)', 'Feed Temperature', 'Feed water pH', 'Pass Stage', 'Pressure Vessel', 
+      'Elements', 'Element age(years)', 'Recovery(%)', 'Ca_FW', 'Mg_FW', 'Na_FW', 'K_FW', 
+      'NH4_FW', 'Ba_FW', 'Sr_FW', 'H_FW', 'CO3_FW', 'HCO3_FW', 'SO4_FW', 'Cl_FW', 'F_FW',
+      'NO3_FW', 'PO4_FW', 'OH_FW', 'SiO2_FW', 'B_FW', 'CO2_FW', 'NH3_FW', 'Feed Water TDS',
+      'CaSO4 / ksp * 100, %_FW', 'SrSO4 / ksp * 100, %_FW', 'BaSO4 / ksp * 100, %_FW', 
+      'SiO2 saturation, %_FW', 'CaF2 / ksp * 100, %_FW'
+    ];
+
+    const orderedFormData = {};
+    orderedKeys.forEach(key => {
+      if (formData.hasOwnProperty(key)) {
+        orderedFormData[key] = formData[key];
+      }
+    });
+    
+    return orderedFormData
+    
+  }
 
   // Replace individual handlers with generic ones
   const handleBoxClick = (type) => {
@@ -62,26 +104,18 @@ const FlowDiagram = () => {
   // Add a loading state
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleRunSimulation = () => {
-    // Set loading state to true when simulation starts
+  const handleRunSimulation = async() => {
+
     setIsLoading(true);
     console.log("Running simulation...");
-    
-    // Simulate API call
-    // Replace this with your actual API call
-    fetch('your-api-endpoint')
-      .then(response => response.json())
-      .then(data => {
-        console.log("Simulation results:", data);
-        // Process your data here
-      })
-      .catch(error => {
-        console.error("Error running simulation:", error);
-      })
-      .finally(() => {
-        // Set loading state back to false when API call completes
-        setIsLoading(false);
-      });
+
+    const formData = sortData()
+    const result = await predictROPerformance(formData);
+    console.log(result)
+
+    setIsLoading(false)
+
+
   };
 
   return (
@@ -205,6 +239,7 @@ const FlowDiagram = () => {
       </div>
     </div>
   );
+
 };
 
 export default FlowDiagram;

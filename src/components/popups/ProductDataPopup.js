@@ -269,15 +269,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
             <div className="parameters-container">
               <div className="parameters-header">Parameters</div>
 
-              <div className="parameter-row">
-                <label>Feed Flow</label>
-                <input 
-                  type="text" 
-                  value={parameters.feedFlow} 
-                  onChange={(e) => handleParameterChange('ph', e.target.value)}
-                  readOnly
-                />
-              </div>
               
               <div className="parameter-row">
                 <label>Permeate TDS</label>

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   flowValues: {
-    feedFlow: "100",
+    'Feed Flow (m3/hr)': "100",
   },
   selectedOption: "feed",
 };
