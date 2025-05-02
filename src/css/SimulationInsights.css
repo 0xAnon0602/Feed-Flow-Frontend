@@ -91,3 +91,14 @@
   font-size: 14px;
   color: #34495e;
 } 
+
+.recovery-chart-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.chart-wrapper {
+  position: relative;
+}

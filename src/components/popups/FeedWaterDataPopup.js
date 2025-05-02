@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { updateIonValue, updateParameter } from '../../redux/slices/feedWaterSlice';
 import "../../css/FeedWaterDataPopup.css";
@@ -6,6 +6,14 @@ import "../../css/FeedWaterDataPopup.css";
 const FeedWaterDataPopup = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.feedWater);
+
+    // Calculate Feed TDS as sum of all ion values
+    const feedTds = useMemo(() => {
+      return Object.values(ionValues).reduce((acc, val) => {
+        const num = parseFloat(val);
+        return acc + (isNaN(num) ? 0 : num);
+      }, 0);
+    }, [ionValues]);
 
   // Handle ion input changes
   const handleIonChange = (key, value) => {
@@ -272,6 +280,15 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                   type="text" 
                   value={parameters.recovery} 
                   onChange={(e) => handleParameterChange('recovery', e.target.value)}
+                />
+
+              </div>
+              <div className="parameter-row">
+                <label>Feed TDS </label>
+                <input 
+                  type="text" 
+                  value={feedTds.toFixed(2)} 
+                  readOnly
                 />
               </div>
               

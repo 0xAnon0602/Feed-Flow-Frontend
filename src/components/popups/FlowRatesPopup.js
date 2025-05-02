@@ -47,50 +47,8 @@ const FlowRatesPopup = ({ isOpen, onClose }) => {
                       onChange={(e) => handleFlowChange("feedFlow", e.target.value)}
                       disabled={selectedOption !== "feed"}
                     />
-                    <span className="flow-unit">gpm</span>
+                    <span className="flow-unit">m<sup>3</sup></span>
                   </div>
-              </div>
-
-              <div className="flow-option">
-                  <label>
-                    <input 
-                      type="radio" 
-                      name="flowOption" 
-                      checked={selectedOption === "product"} 
-                      onChange={() => handleOptionChange("product")}
-                    />
-                    <span>Specify Product</span>
-                  </label>
-                  <div className="flow-input">
-                    <input 
-                      type="text" 
-                      value={flowValues.productFlow} 
-                      onChange={(e) => handleFlowChange("productFlow", e.target.value)}
-                      disabled={selectedOption !== "product"}
-                    />
-                    <span className="flow-unit">gpm</span>
-                  </div>
-              </div>
-              
-              <div className="flow-option">
-                <label>
-                  <input 
-                    type="radio" 
-                    name="flowOption" 
-                    checked={selectedOption === "concentrate"} 
-                    onChange={() => handleOptionChange("concentrate")}
-                  />
-                  <span>Specify Concentrate</span>
-                </label>
-                <div className="flow-input">
-                  <input 
-                    type="text" 
-                    value={flowValues.concentrateFlow} 
-                    onChange={(e) => handleFlowChange("concentrateFlow", e.target.value)}
-                    disabled={selectedOption !== "concentrate"}
-                  />
-                  <span className="flow-unit">gpm</span>
-                </div>
               </div>
 
             </div>

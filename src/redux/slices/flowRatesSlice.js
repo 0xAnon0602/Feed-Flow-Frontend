@@ -3,8 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   flowValues: {
     feedFlow: "100",
-    productFlow: "",
-    concentrateFlow: ""
   },
   selectedOption: "feed",
 };
