@@ -1,8 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const ConcentrateDataPopup = ({ isOpen, onClose }) => {
-  const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.concentrate);
 
 
