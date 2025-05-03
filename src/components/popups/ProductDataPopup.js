@@ -1,21 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { updateIonValue, updateParameter } from '../../redux/slices/productSlice';
 import "../../css/ProductDataPopup.css";
 
 const ProductDataPopup = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.product);
 
-  // Handle ion input changes
-  const handleIonChange = (key, value) => {
-    dispatch(updateIonValue({ key, value }));
-  };
-
-  // Handle parameter changes
-  const handleParameterChange = (key, value) => {
-    dispatch(updateParameter({ key, value }));
-  };
 
   if (!isOpen) return null;
 
@@ -43,9 +33,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.calcium} 
-                        onChange={(e) => handleIonChange('calcium', e.target.value)}
-                        readOnly
+                        value={ionValues.Ca_P} 
+                        onChange={(e) => handleIonChange('Ca_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -54,9 +43,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.magnesium} 
-                        onChange={(e) => handleIonChange('magnesium', e.target.value)}
-                        readOnly
+                        value={ionValues.Mg_P} 
+                        onChange={(e) => handleIonChange('Mg_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -65,9 +53,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sodium} 
-                        onChange={(e) => handleIonChange('sodium', e.target.value)}
-                        readOnly
+                        value={ionValues.Na_P} 
+                        onChange={(e) => handleIonChange('Na_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -76,20 +63,18 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.potassium} 
-                        onChange={(e) => handleIonChange('potassium', e.target.value)}
-                        readOnly
+                        value={ionValues.K_P} 
+                        onChange={(e) => handleIonChange('K_P', e.target.value)}
                       />
                     </td>
                   </tr> 
                   <tr>
-                  <td>Ammonium - N (NH4)</td>
+                    <td>Ammonium - N (NH4)</td>
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonium} 
-                        onChange={(e) => handleIonChange('ammonium', e.target.value)}
-                        readOnly
+                        value={ionValues.NH4_P} 
+                        onChange={(e) => handleIonChange('NH4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -98,9 +83,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.barium} 
-                        onChange={(e) => handleIonChange('barium', e.target.value)}
-                        readOnly
+                        value={ionValues.Ba_P} 
+                        onChange={(e) => handleIonChange('Ba_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -109,24 +93,21 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.strontium} 
-                        onChange={(e) => handleIonChange('strontium', e.target.value)}
-                        readOnly
+                        value={ionValues.Sr_P} 
+                        onChange={(e) => handleIonChange('Sr_P', e.target.value)}
                       />
                     </td>
                   </tr>
                   <tr>
-                  <td>Hydrogen (H)</td>
-                  <td>
+                    <td>Hydrogen (H)</td>
+                    <td>
                       <input 
                         type="text" 
-                        value={ionValues.hydrogen} 
-                        onChange={(e) => handleIonChange('hydrogen', e.target.value)}
-                        readOnly
+                        value={ionValues.H_P} 
+                        onChange={(e) => handleIonChange('H_P', e.target.value)}
                       />
                     </td>
                   </tr>
-
                   <tr className="separator-row">
                     <td colSpan="2"></td>
                   </tr>
@@ -135,9 +116,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sulfate} 
-                        onChange={(e) => handleIonChange('sulfate', e.target.value)}
-                        readOnly
+                        value={ionValues.SO4_P} 
+                        onChange={(e) => handleIonChange('SO4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -146,9 +126,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.chloride} 
-                        onChange={(e) => handleIonChange('chloride', e.target.value)}
-                        readOnly
+                        value={ionValues.Cl_P} 
+                        onChange={(e) => handleIonChange('Cl_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -157,9 +136,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.fluoride} 
-                        onChange={(e) => handleIonChange('fluoride', e.target.value)}
-                        readOnly
+                        value={ionValues.F_P} 
+                        onChange={(e) => handleIonChange('F_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -168,20 +146,18 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.nitrate} 
-                        onChange={(e) => handleIonChange('nitrate', e.target.value)}
-                        readOnly
+                        value={ionValues.NO3_P} 
+                        onChange={(e) => handleIonChange('NO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
                   <tr>
-                  <td>Hydroxide (OH)</td>
-                  <td>
-                  <input 
+                    <td>Hydroxide (OH)</td>
+                    <td>
+                      <input 
                         type="text" 
-                        value={ionValues.hydroxide} 
-                        onChange={(e) => handleIonChange('hydroxide', e.target.value)}
-                        readOnly
+                        value={ionValues.OH_P} 
+                        onChange={(e) => handleIonChange('OH_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -190,9 +166,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.phosphate} 
-                        onChange={(e) => handleIonChange('phosphate', e.target.value)}
-                        readOnly
+                        value={ionValues.PO4_P} 
+                        onChange={(e) => handleIonChange('PO4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -201,9 +176,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.boron} 
-                        onChange={(e) => handleIonChange('boron', e.target.value)}
-                        readOnly
+                        value={ionValues.B_P} 
+                        onChange={(e) => handleIonChange('B_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -212,9 +186,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.silica} 
-                        onChange={(e) => handleIonChange('silica', e.target.value)}
-                        readOnly
+                        value={ionValues.SiO2_P} 
+                        onChange={(e) => handleIonChange('SiO2_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -223,9 +196,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.bicarbonate} 
-                        onChange={(e) => handleIonChange('bicarbonate', e.target.value)}
-                        readOnly
+                        value={ionValues.HCO3_P} 
+                        onChange={(e) => handleIonChange('HCO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -234,9 +206,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonDioxide} 
-                        onChange={(e) => handleIonChange('carbonDioxide', e.target.value)}
-                        readOnly
+                        value={ionValues.CO2_P} 
+                        onChange={(e) => handleIonChange('CO2_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -245,9 +216,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonate} 
-                        onChange={(e) => handleIonChange('carbonate', e.target.value)}
-                        readOnly
+                        value={ionValues.CO3_P} 
+                        onChange={(e) => handleIonChange('CO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -256,9 +226,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonia} 
-                        onChange={(e) => handleIonChange('ammonia', e.target.value)}
-                        readOnly
+                        value={ionValues.NH3_P} 
+                        onChange={(e) => handleIonChange('NH3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -274,8 +243,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <label>Permeate TDS</label>
                 <input 
                   type="text" 
-                  value={parameters.tds} 
-                  onChange={(e) => handleParameterChange('ph', e.target.value)}
+                  value={parameters['Permeate TDS']} 
+                  onChange={(e) => handleParameterChange('Permeate TDS', e.target.value)}
                   readOnly
                 />
               </div>
@@ -284,8 +253,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <label>Specific Energy (kwh/m3)</label>
                 <input 
                   type="text" 
-                  value={parameters.specificEngergy} 
-                  onChange={(e) => handleParameterChange('temperature', e.target.value)}
+                  value={parameters['Specific Energy(kwh/m3)']} 
+                  onChange={(e) => handleParameterChange('Specific Energy(kwh/m3)', e.target.value)}
                   readOnly
                 />
               </div>
@@ -294,8 +263,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <label>Feed Pressure (bar)</label>
                 <input 
                   type="text" 
-                  value={parameters.feedPressure} 
-                  onChange={(e) => handleParameterChange('tds', e.target.value)}
+                  value={parameters['Feed Pressure(bar)']} 
+                  onChange={(e) => handleParameterChange('Feed Pressure(bar)', e.target.value)}
                   readOnly
                 />
               </div>
@@ -304,14 +273,19 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <label>Flux (lmh)</label>
                 <input 
                   type="text" 
-                  value={parameters.flux} 
-                  onChange={(e) => handleParameterChange('tds', e.target.value)}
+                  value={parameters['Flux(lmh)']} 
+                  onChange={(e) => handleParameterChange('Flux(lmh)', e.target.value)}
                   readOnly
                 />
               </div>
 
             </div>
           </div>
+
+          <div className="reactor-button-row">
+            <button className="reactor-ok-button" onClick={onClose}>OK</button>
+          </div>
+
         </div>
       </div>
     </div>

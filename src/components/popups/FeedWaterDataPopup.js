@@ -92,7 +92,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.NH4_FW} 
-                        onChange={(e) => handleIonChange('ammonium', e.target.value)}
+                        onChange={(e) => handleIonChange('NH4_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -112,7 +112,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Sr_FW} 
-                        onChange={(e) => handleIonChange('strontium', e.target.value)}
+                        onChange={(e) => handleIonChange('Sr_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -195,7 +195,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.B_FW} 
-                        onChange={(e) => handleIonChange('boron', e.target.value)}
+                        onChange={(e) => handleIonChange('B_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -215,7 +215,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.HCO3_FW} 
-                        onChange={(e) => handleIonChange('bicarbonate', e.target.value)}
+                        onChange={(e) => handleIonChange('HCO3_FW', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -352,8 +352,14 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 </div>
               </div>
               
+              
             </div>
           </div>
+
+          <div className="reactor-button-row">
+            <button className="reactor-ok-button" onClick={onClose}>OK</button>
+          </div>
+          
         </div>
       </div>
     </div>

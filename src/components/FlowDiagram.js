@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { useSelector } from 'react-redux';
-import { fetchInputSchema, predictROPerformance } from '../services/api';
+import { useSelector, useDispatch } from 'react-redux';
+import { predictROPerformance } from '../services/api';
 import FeedWaterDataPopup from "./popups/FeedWaterDataPopup";
 import FlowRatesPopup from "./popups/FlowRatesPopup";
 import ArrayReactorPopup from "./popups/ArrayReactorPopup";
 import ProductDataPopup from "./popups/ProductDataPopup";
 import ConcentrateDataPopup from "./popups/ConcentrateDataPopup";
 import SimulationInsights from "./SimulationInsights";
+
+import { updateIonValueProduct, updateParameterProduct } from '../redux/slices/productSlice';
+import { updateIonValueConcentrate, updateParameterConcentrate } from '../redux/slices/concentrateSlice';
+
 import "../css/FlowDiagram.css";
 
 const FlowDiagram = () => {
@@ -16,9 +20,30 @@ const FlowDiagram = () => {
   const [isProductPopupOpen, setIsProductPopupOpen] = useState(false);
   const [isConcentratePopupOpen, setIsConcentratePopupOpen] = useState(false);
 
+  const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.feedWater);
   const flowValues = useSelector(state => state.flowRates.flowValues);
   const stageData = useSelector(state => state.reactor[0]);
+
+
+
+  const handleIonChangeProduct = (key, value) => {
+    dispatch(updateIonValueProduct({ key, value }));
+  };
+
+  const handleParameterChangeProduct = (key, value) => {
+    dispatch(updateParameterProduct({ key, value }));
+  };
+
+  const handleIonChangeConcentrate = (key, value) => {
+    dispatch(updateIonValueConcentrate({ key, value }));
+  };
+
+  // Handle parameter changes
+  const handleParameterChangeConcentrate = (key, value) => {
+    dispatch(updateParameterConcentrate({ key, value }));
+  };
+
 
   const sortData = () => {
 
@@ -54,6 +79,76 @@ const FlowDiagram = () => {
     
     return orderedFormData
     
+  }
+
+  const outputSchema = () => {
+
+    const productSchema = {
+        "ions": [
+            "Ca_P",
+            "Mg_P",
+            "Na_P",
+            "K_P",
+            "NH4_P",
+            "Ba_P",
+            "Sr_P",
+            "H_P",
+            "SO4_P",
+            "Cl_P",
+            "F_P",
+            "NO3_P",
+            "OH_P",
+            "PO4_P",
+            "B_P",
+            "SiO2_P",
+            "HCO3_P",
+            "CO2_P",
+            "CO3_P",
+            "NH3_P",
+            ],
+          "parameters": [
+            'Permeate TDS',
+            'Specific Energy(kwh/m3)',
+            'Feed Pressure(bar)',
+            'Flux(lmh)',
+          ]
+    }
+
+    const concentrateSchema = {
+        "ions": [
+            "Ca_C",
+            "Mg_C",
+            "Na_C",
+            "K_C",
+            "NH4_C",
+            "Ba_C",
+            "Sr_C",
+            "H_C",
+            "SO4_C",
+            "Cl_C",
+            "F_C",
+            "NO3_C",
+            "OH_C",
+            "PO4_C",
+            "B_C",
+            "SiO2_C",
+            "HCO3_C",
+            "CO2_C",
+            "CO3_C",
+            "NH3_C",
+            'BaSO4 / ksp * 100, %_C',
+            'CaF2 / ksp * 100, %_C',
+            'CaSO4 / ksp * 100, %_C',
+            'SiO2 saturation, %_C',
+            'SrSO4 / ksp * 100, %_C'
+            ],
+          "parameters": [
+            'Concentrate TDS'
+          ]
+    }
+
+    return { productSchema, concentrateSchema}
+
   }
 
   // Replace individual handlers with generic ones
@@ -111,10 +206,41 @@ const FlowDiagram = () => {
 
     const formData = sortData()
     const result = await predictROPerformance(formData);
-    console.log(result)
+    const prediction = result.predictions
+
+    const { productSchema, concentrateSchema} = outputSchema()
+
+    const productIons = productSchema.ions
+    for(const ion of productIons) {
+      if(ion in prediction){
+        handleIonChangeProduct(ion, prediction[ion].toFixed(2))
+      }
+    }
+
+    const productParameters = productSchema.parameters
+    for(const parameter of productParameters) {
+      if(parameter in prediction){
+        handleParameterChangeProduct(parameter, prediction[parameter].toFixed(2))
+      }
+    }
+
+
+    const concentrateIons = concentrateSchema.ions
+    for(const ion of concentrateIons) {
+      if(ion in prediction){
+        handleIonChangeConcentrate(ion, prediction[ion].toFixed(2))
+      }
+    }
+
+    const concentrateParameters = concentrateSchema.parameters
+    for(const parameter of concentrateParameters) {
+      if(parameter in prediction){
+        handleParameterChangeConcentrate(parameter, prediction[parameter].toFixed(2))
+      }
+    }
 
     setIsLoading(false)
-
+    setIsProductPopupOpen(true)
 
   };
 

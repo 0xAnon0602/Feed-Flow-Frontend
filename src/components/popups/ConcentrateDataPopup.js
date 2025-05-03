@@ -1,20 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { updateIonValue, updateParameter } from '../../redux/slices/concentrateSlice';
 
 const ConcentrateDataPopup = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.concentrate);
 
-  // Handle ion input changes
-  const handleIonChange = (key, value) => {
-    dispatch(updateIonValue({ key, value }));
-  };
 
-  // Handle parameter changes
-  const handleParameterChange = (key, value) => {
-    dispatch(updateParameter({ key, value }));
-  };
 
   if (!isOpen) return null;
 
@@ -42,9 +33,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.calcium} 
-                        onChange={(e) => handleIonChange('calcium', e.target.value)}
-                        readOnly
+                        value={ionValues.Ca_C} 
                       />
                     </td>
                   </tr>
@@ -53,9 +42,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.magnesium} 
-                        onChange={(e) => handleIonChange('magnesium', e.target.value)}
-                        readOnly
+                        value={ionValues.Mg_C} 
                       />
                     </td>
                   </tr>
@@ -64,9 +51,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sodium} 
-                        onChange={(e) => handleIonChange('sodium', e.target.value)}
-                        readOnly
+                        value={ionValues.Na_C} 
                       />
                     </td>
                   </tr>
@@ -75,20 +60,16 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.potassium} 
-                        onChange={(e) => handleIonChange('potassium', e.target.value)}
-                        readOnly
+                        value={ionValues.K_C} 
                       />
                     </td>
                   </tr> 
                   <tr>
-                  <td>Ammonium - N (NH4)</td>
+                    <td>Ammonium - N (NH4)</td>
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonium} 
-                        onChange={(e) => handleIonChange('ammonium', e.target.value)}
-                        readOnly
+                        value={ionValues.NH4_C} 
                       />
                     </td>
                   </tr>
@@ -97,9 +78,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.barium} 
-                        onChange={(e) => handleIonChange('barium', e.target.value)}
-                        readOnly
+                        value={ionValues.Ba_C} 
                       />
                     </td>
                   </tr>
@@ -108,20 +87,16 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.strontium} 
-                        onChange={(e) => handleIonChange('strontium', e.target.value)}
-                        readOnly
+                        value={ionValues.Sr_C} 
                       />
                     </td>
                   </tr>
                   <tr>
-                  <td>Hydrogen (H)</td>
-                  <td>
+                    <td>Hydrogen (H)</td>
+                    <td>
                       <input 
                         type="text" 
-                        value={ionValues.hydrogen} 
-                        onChange={(e) => handleIonChange('hydrogen', e.target.value)}
-                        readOnly
+                        value={ionValues.H_C} 
                       />
                     </td>
                   </tr>
@@ -133,9 +108,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.sulfate} 
-                        onChange={(e) => handleIonChange('sulfate', e.target.value)}
-                        readOnly
+                        value={ionValues.SO4_C} 
                       />
                     </td>
                   </tr>
@@ -144,9 +117,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.chloride} 
-                        onChange={(e) => handleIonChange('chloride', e.target.value)}
-                        readOnly
+                        value={ionValues.Cl_C} 
                       />
                     </td>
                   </tr>
@@ -155,9 +126,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.fluoride} 
-                        onChange={(e) => handleIonChange('fluoride', e.target.value)}
-                        readOnly
+                        value={ionValues.F_C} 
                       />
                     </td>
                   </tr>
@@ -166,20 +135,16 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.nitrate} 
-                        onChange={(e) => handleIonChange('nitrate', e.target.value)}
-                        readOnly
+                        value={ionValues.NO3_C} 
                       />
                     </td>
                   </tr>
                   <tr>
-                  <td>Hydroxide (OH)</td>
-                  <td>
-                  <input 
+                    <td>Hydroxide (OH)</td>
+                    <td>
+                      <input 
                         type="text" 
-                        value={ionValues.hydroxide} 
-                        onChange={(e) => handleIonChange('hydroxide', e.target.value)}
-                        readOnly
+                        value={ionValues.OH_C} 
                       />
                     </td>
                   </tr>
@@ -188,9 +153,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.phosphate} 
-                        onChange={(e) => handleIonChange('phosphate', e.target.value)}
-                        readOnly
+                        value={ionValues.PO4_C} 
                       />
                     </td>
                   </tr>
@@ -199,9 +162,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.boron} 
-                        onChange={(e) => handleIonChange('boron', e.target.value)}
-                        readOnly
+                        value={ionValues.B_C} 
                       />
                     </td>
                   </tr>
@@ -210,9 +171,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.silica} 
-                        onChange={(e) => handleIonChange('silica', e.target.value)}
-                        readOnly
+                        value={ionValues.SiO2_C} 
                       />
                     </td>
                   </tr>
@@ -221,9 +180,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.bicarbonate} 
-                        onChange={(e) => handleIonChange('bicarbonate', e.target.value)}
-                        readOnly
+                        value={ionValues.HCO3_C} 
                       />
                     </td>
                   </tr>
@@ -232,9 +189,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonDioxide} 
-                        onChange={(e) => handleIonChange('carbonDioxide', e.target.value)}
-                        readOnly
+                        value={ionValues.CO2_C} 
                       />
                     </td>
                   </tr>
@@ -243,9 +198,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.carbonate} 
-                        onChange={(e) => handleIonChange('carbonate', e.target.value)}
-                        readOnly
+                        value={ionValues.CO3_C} 
                       />
                     </td>
                   </tr>
@@ -254,9 +207,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.ammonia} 
-                        onChange={(e) => handleIonChange('ammonia', e.target.value)}
-                        readOnly
+                        value={ionValues.NH3_C} 
                       />
                     </td>
                   </tr>
@@ -264,31 +215,80 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
               </table>
             </div>
             
-            
-            <div className="parameters-container">
-              <div className="parameters-header">Parameters</div>
-              
-              <div className="parameter-row">
-                <label>Concentrate TDS</label>
-                <input 
-                  type="text" 
-                  value={parameters.tds} 
-                  onChange={(e) => handleParameterChange('tds', e.target.value)}
-                  readOnly
-                />
+            <div className="parameters-saturation-container" style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="parameters-header">Parameters</div>
+                
+                <div className="parameter-row">
+                  <label>Concentrate TDS</label>
+                  <input 
+                    type="text" 
+                    value={parameters['Concentrate TDS']} 
+                    readOnly
+                  />
+                </div>
+
+              <div className="saturation-data">
+                  <div className="saturation-header">Saturation Salts </div>
+                  <div className="saturation-row">
+                    <span>BaSO4</span>
+                    <span>
+                      <input
+                        type="text"
+                        value={ionValues['BaSO4 / ksp * 100, %_C'] || "0.00"}
+                        className="saturation-input"
+                      /> 
+                    </span>
+                  </div>
+                  <div className="saturation-row">
+                    <span>CaF2</span>
+                    <span>
+                      <input
+                        type="text"
+                        value={ionValues['CaF2 / ksp * 100, %_C'] || "0.00"}
+                        className="saturation-input"
+                      /> 
+                    </span>
+                  </div>
+                  <div className="saturation-row">
+                    <span>CaSO4</span>
+                    <span>
+                      <input
+                        type="text"
+                        value={ionValues['CaSO4 / ksp * 100, %_C'] || "0.00"}
+                        className="saturation-input"
+                      /> 
+                    </span>
+                  </div>
+                  <div className="saturation-row">
+                    <span>SiO2</span>
+                    <span>
+                      <input
+                        type="text"
+                        value={ionValues['SiO2 saturation, %_C'] || "0.00"}
+                        className="saturation-input"
+                      /> 
+                    </span>
+                  </div>
+                  <div className="saturation-row">
+                    <span>SrSO4</span>
+                    <span>
+                      <input
+                        type="text"
+                        value={ionValues['SrSO4 / ksp * 100, %_C'] || "0.00"}
+                        className="saturation-input"
+                      /> 
+                    </span>
+                  </div>
               </div>
-              
-              <div className="parameter-row">
-                <label>Saturation Salts</label>
-                <input 
-                  type="text" 
-                  value={parameters.salts} 
-                  onChange={(e) => handleParameterChange('salts', e.target.value)}
-                  readOnly
-                />
-              </div>
+
             </div>
+
           </div>
+
+          <div className="reactor-button-row">
+            <button className="reactor-ok-button" onClick={onClose}>OK</button>
+          </div>
+
         </div>
       </div>
     </div>

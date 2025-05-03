@@ -2,32 +2,32 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   ionValues: {
-    calcium: "0.00",
-    magnesium: "0.00",
-    sodium: "0.00",
-    potassium: "0.00",
-    ammonium: "0.00",
-    barium: "0.00",
-    strontium: "0.00",
-    hydrogen: "0.00",
-    sulfate: "0.00",
-    chloride: "0.00",
-    fluoride: "0.00",
-    nitrate: "0.00",
-    hydroxide: "0.00",
-    phosphate: "0.00",
-    boron: "0.00",
-    silica: "0.00",
-    bicarbonate: "0.00",
-    carbonDioxide: "0.00",
-    carbonate: "0.00",
-    ammonia: "0.00",
+    Ca_P: "0.00",
+    Mg_P: "0.00",
+    Na_P: "0.00",
+    K_P: "0.00",
+    NH4_P: "0.00",
+    Ba_P: "0.00",
+    Sr_P: "0.00",
+    H_P: "0.00",
+    SO4_P: "0.00",
+    Cl_P: "0.00",
+    F_P: "0.00",
+    NO3_P: "0.00",
+    OH_P: "0.00",
+    PO4_P: "0.00",
+    B_P: "0.00",
+    SiO2_P: "0.00",
+    HCO3_P: "0.00",
+    CO2_P: "0.00",
+    CO3_P:"0.00",
+    NH3_P: "0.00",
   },
   parameters: {
-    tds: "0.00",
-    specificEngergy: "0.0",
-    feedPressure: "0.0",
-    flux: "0.0",
+    'Permeate TDS': "0.00",
+    'Specific Energy(kwh/m3)': "0.0",
+    'Feed Pressure(bar)': "0.0",
+    'Flux(lmh)': "0.0",
   }
 };
 
@@ -35,11 +35,11 @@ const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    updateIonValue: (state, action) => {
+    updateIonValueProduct: (state, action) => {
       const { key, value } = action.payload;
       state.ionValues[key] = value;
     },
-    updateParameter: (state, action) => {
+    updateParameterProduct: (state, action) => {
       const { key, value } = action.payload;
       state.parameters[key] = value;
     },
@@ -51,8 +51,8 @@ const productSlice = createSlice({
 });
 
 export const { 
-  updateIonValue, 
-  updateParameter, 
+  updateIonValueProduct, 
+  updateParameterProduct, 
   updateProductData,
   resetProductData
 } = productSlice.actions;

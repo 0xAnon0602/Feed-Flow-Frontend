@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import RecoveryDonutChart from './RecoveryDonutChart';
+import RecoveryDonutChart from './charts/RecoveryDonutChart';
 import '../css/SimulationInsights.css';
 
 const SimulationInsights = () => {
