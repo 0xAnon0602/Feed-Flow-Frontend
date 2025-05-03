@@ -2,7 +2,7 @@
  * API service for communicating with the backend
  */
 
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = 'https://feed-flow-backend.onrender.com/';
 
 /**
  * Fetch the input schema from the backend
