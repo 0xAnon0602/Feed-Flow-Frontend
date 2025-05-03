@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import "../../css/ProductDataPopup.css";
 
 const ProductDataPopup = ({ isOpen, onClose }) => {
-  const dispatch = useDispatch();
   const { ionValues, parameters } = useSelector(state => state.product);
 
 
@@ -34,7 +33,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Ca_P} 
-                        onChange={(e) => handleIonChange('Ca_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -44,7 +42,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Mg_P} 
-                        onChange={(e) => handleIonChange('Mg_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -54,7 +51,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Na_P} 
-                        onChange={(e) => handleIonChange('Na_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -64,7 +60,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.K_P} 
-                        onChange={(e) => handleIonChange('K_P', e.target.value)}
                       />
                     </td>
                   </tr> 
@@ -74,7 +69,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.NH4_P} 
-                        onChange={(e) => handleIonChange('NH4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -84,7 +78,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Ba_P} 
-                        onChange={(e) => handleIonChange('Ba_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -94,7 +87,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Sr_P} 
-                        onChange={(e) => handleIonChange('Sr_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -104,7 +96,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.H_P} 
-                        onChange={(e) => handleIonChange('H_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -117,7 +108,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.SO4_P} 
-                        onChange={(e) => handleIonChange('SO4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -127,7 +117,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Cl_P} 
-                        onChange={(e) => handleIonChange('Cl_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -137,7 +126,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.F_P} 
-                        onChange={(e) => handleIonChange('F_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -147,7 +135,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.NO3_P} 
-                        onChange={(e) => handleIonChange('NO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -157,7 +144,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.OH_P} 
-                        onChange={(e) => handleIonChange('OH_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -167,7 +153,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.PO4_P} 
-                        onChange={(e) => handleIonChange('PO4_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -177,7 +162,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.B_P} 
-                        onChange={(e) => handleIonChange('B_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -187,7 +171,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.SiO2_P} 
-                        onChange={(e) => handleIonChange('SiO2_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -197,7 +180,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.HCO3_P} 
-                        onChange={(e) => handleIonChange('HCO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -207,7 +189,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.CO2_P} 
-                        onChange={(e) => handleIonChange('CO2_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -217,7 +198,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.CO3_P} 
-                        onChange={(e) => handleIonChange('CO3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -227,7 +207,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.NH3_P} 
-                        onChange={(e) => handleIonChange('NH3_P', e.target.value)}
                       />
                     </td>
                   </tr>
@@ -244,7 +223,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters['Permeate TDS']} 
-                  onChange={(e) => handleParameterChange('Permeate TDS', e.target.value)}
                   readOnly
                 />
               </div>
@@ -254,7 +232,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters['Specific Energy(kwh/m3)']} 
-                  onChange={(e) => handleParameterChange('Specific Energy(kwh/m3)', e.target.value)}
                   readOnly
                 />
               </div>
@@ -264,7 +241,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters['Feed Pressure(bar)']} 
-                  onChange={(e) => handleParameterChange('Feed Pressure(bar)', e.target.value)}
                   readOnly
                 />
               </div>
@@ -274,7 +250,6 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   value={parameters['Flux(lmh)']} 
-                  onChange={(e) => handleParameterChange('Flux(lmh)', e.target.value)}
                   readOnly
                 />
               </div>
