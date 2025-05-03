@@ -15,6 +15,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
       }, 0);
     }, [ionValues]);
 
+
   // Handle ion input changes
   const handleIonChange = (key, value) => {
     dispatch(updateIonValue({ key, value }));
@@ -24,6 +25,9 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
   const handleParameterChange = (key, value) => {
     dispatch(updateParameter({ key, value }));
   };
+
+  handleParameterChange('Feed Water TDS', feedTds.toFixed(2))
+
 
   if (!isOpen) return null;
 
@@ -287,7 +291,7 @@ const FeedWaterDataPopup = ({ isOpen, onClose }) => {
                 <label>Feed TDS </label>
                 <input 
                   type="text" 
-                  value={feedTds.toFixed(2)} 
+                  value={parameters['Feed Water TDS']} 
                   onChange={(e) => handleParameterChange('Feed Water TDS', feedTds)}
                   readOnly
                 />

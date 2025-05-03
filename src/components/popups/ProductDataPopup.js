@@ -33,6 +33,7 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Ca_P} 
+                        readOnly
                       />
                     </td>
                   </tr>
@@ -42,6 +43,7 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Mg_P} 
+                        readOnly
                       />
                     </td>
                   </tr>
@@ -51,6 +53,7 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.Na_P} 
+                        readOnly
                       />
                     </td>
                   </tr>
@@ -60,6 +63,7 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                       <input 
                         type="text" 
                         value={ionValues.K_P} 
+                        readOnly
                       />
                     </td>
                   </tr> 
@@ -68,7 +72,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NH4_P} 
+                        value={ionValues.NH4_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -77,7 +82,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Ba_P} 
+                        value={ionValues.Ba_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -86,7 +92,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Sr_P} 
+                        value={ionValues.Sr_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -95,7 +102,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.H_P} 
+                        value={ionValues.H_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -107,7 +115,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.SO4_P} 
+                        value={ionValues.SO4_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -116,7 +125,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Cl_P} 
+                        value={ionValues.Cl_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -125,7 +135,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.F_P} 
+                        value={ionValues.F_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -134,7 +145,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NO3_P} 
+                        value={ionValues.NO3_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -143,7 +155,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.OH_P} 
+                        value={ionValues.OH_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -152,7 +165,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.PO4_P} 
+                        value={ionValues.PO4_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -161,7 +175,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.B_P} 
+                        value={ionValues.B_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -170,7 +185,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.SiO2_P} 
+                        value={ionValues.SiO2_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -179,7 +195,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.HCO3_P} 
+                        value={ionValues.HCO3_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -188,7 +205,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.CO2_P} 
+                        value={ionValues.CO2_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -197,7 +215,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.CO3_P} 
+                        value={ionValues.CO3_P}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -206,7 +225,8 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NH3_P} 
+                        value={ionValues.NH3_P}
+                        readOnly 
                       />
                     </td>
                   </tr>

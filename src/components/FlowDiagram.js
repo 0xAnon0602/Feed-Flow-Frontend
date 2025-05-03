@@ -202,7 +202,6 @@ const FlowDiagram = () => {
   const handleRunSimulation = async() => {
 
     setIsLoading(true);
-    console.log("Running simulation...");
 
     const formData = sortData()
     const result = await predictROPerformance(formData);
@@ -241,6 +240,7 @@ const FlowDiagram = () => {
 
     setIsLoading(false)
     setIsProductPopupOpen(true)
+    setIsConcentratePopupOpen(true)
 
   };
 

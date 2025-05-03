@@ -32,7 +32,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Ca_C} 
+                        value={ionValues.Ca_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -41,7 +42,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Mg_C} 
+                        value={ionValues.Mg_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -50,7 +52,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Na_C} 
+                        value={ionValues.Na_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -59,7 +62,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.K_C} 
+                        value={ionValues.K_C}
+                        readOnly 
                       />
                     </td>
                   </tr> 
@@ -68,7 +72,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NH4_C} 
+                        value={ionValues.NH4_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -77,7 +82,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Ba_C} 
+                        value={ionValues.Ba_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -86,7 +92,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Sr_C} 
+                        value={ionValues.Sr_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -95,7 +102,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.H_C} 
+                        value={ionValues.H_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -107,7 +115,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.SO4_C} 
+                        value={ionValues.SO4_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -116,7 +125,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.Cl_C} 
+                        value={ionValues.Cl_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -125,7 +135,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.F_C} 
+                        value={ionValues.F_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -134,7 +145,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NO3_C} 
+                        value={ionValues.NO3_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -143,7 +155,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.OH_C} 
+                        value={ionValues.OH_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -152,7 +165,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.PO4_C} 
+                        value={ionValues.PO4_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -161,7 +175,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.B_C} 
+                        value={ionValues.B_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -170,7 +185,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.SiO2_C} 
+                        value={ionValues.SiO2_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -179,7 +195,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.HCO3_C} 
+                        value={ionValues.HCO3_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -188,7 +205,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.CO2_C} 
+                        value={ionValues.CO2_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -197,7 +215,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.CO3_C} 
+                        value={ionValues.CO3_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -206,7 +225,8 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                     <td>
                       <input 
                         type="text" 
-                        value={ionValues.NH3_C} 
+                        value={ionValues.NH3_C}
+                        readOnly 
                       />
                     </td>
                   </tr>
@@ -234,6 +254,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                       <input
                         type="text"
                         value={ionValues['BaSO4 / ksp * 100, %_C'] || "0.00"}
+                        readOnly
                         className="saturation-input"
                       /> 
                     </span>
@@ -244,6 +265,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                       <input
                         type="text"
                         value={ionValues['CaF2 / ksp * 100, %_C'] || "0.00"}
+                        readOnly
                         className="saturation-input"
                       /> 
                     </span>
@@ -254,6 +276,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                       <input
                         type="text"
                         value={ionValues['CaSO4 / ksp * 100, %_C'] || "0.00"}
+                        readOnly
                         className="saturation-input"
                       /> 
                     </span>
@@ -264,6 +287,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                       <input
                         type="text"
                         value={ionValues['SiO2 saturation, %_C'] || "0.00"}
+                        readOnly
                         className="saturation-input"
                       /> 
                     </span>
@@ -274,6 +298,7 @@ const ConcentrateDataPopup = ({ isOpen, onClose }) => {
                       <input
                         type="text"
                         value={ionValues['SrSO4 / ksp * 100, %_C'] || "0.00"}
+                        readOnly
                         className="saturation-input"
                       /> 
                     </span>
