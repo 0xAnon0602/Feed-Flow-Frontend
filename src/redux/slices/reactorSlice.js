@@ -11,17 +11,16 @@ const validationRules = {
 const initialState = [
   {
     'Pass Stage': 1,
-    'Pressure Vessel': 6,
+    'Pressure Vessel': 15,
     'Elements': 6,
     elementModel: "SWC5-LD",
-    'Element age(years)': 2.5,
+    'Element age(years)': 3,
   }
 ];
 
 // Helper function to validate a value
 const validateValue = (value, rules) => {
   const numValue = parseFloat(value);
-  console.log(numValue);
   if (isNaN(numValue)) {
     return { isValid: false, message: "Please enter a valid number" };
   }

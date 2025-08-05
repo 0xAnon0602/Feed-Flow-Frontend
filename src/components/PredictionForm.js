@@ -93,13 +93,14 @@ const PredictionForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-grid">
             {schema.required_inputs.map((input) => (
+              console.log(formData[input]),
               <div key={input} className="form-group">
                 <label htmlFor={input}>{input}</label>
                 <input
                   type="number"
                   id={input}
                   name={input}
-                  value={formData[input] || ''}
+                  value={formData[input] !== undefined && formData[input] !== null ? formData[input] : ''}
                   onChange={handleInputChange}
                   step="any"
                   required
@@ -124,6 +125,7 @@ const PredictionForm = () => {
           <div className="predictions-grid">
             {Object.entries(predictions).map(([key, value]) => (
               <div key={key} className="prediction-item">
+                {console.log(key, value)}
                 <span className="prediction-label">{key}:</span>
                 <span className="prediction-value">{typeof value === 'number' ? value.toFixed(2) : value}</span>
               </div>
