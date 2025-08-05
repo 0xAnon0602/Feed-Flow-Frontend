@@ -179,6 +179,18 @@
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
+.parameter-row input[readonly] {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #dee2e6;
+}
+
+.parameter-row input[readonly]:focus {
+  border-color: #dee2e6;
+  box-shadow: none;
+}
+
 .parameter-row select {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -285,4 +297,92 @@
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Validation styles */
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-error {
+  border-color: #e74c3c !important;
+  background-color: #fdf2f2 !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
+}
+
+.validation-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-top: 2px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.error-icon {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Adjust table row height to accommodate validation messages */
+.ion-table td {
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.parameter-row {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Animation for validation messages */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.validation-error {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Reactor button row styling */
+.reactor-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.reactor-ok-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.reactor-ok-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
 }

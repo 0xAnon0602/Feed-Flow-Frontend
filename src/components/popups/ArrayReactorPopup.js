@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { updateStage, addStage, removeStage } from '../../redux/slices/reactorSlice';
+import { updateStage, addStage, removeStage, clearValidationError } from '../../redux/slices/reactorSlice';
 import "../../css/ArrayReactorPopup.css";
 
 const ArrayReactorPopup = ({ isOpen, onClose }) => {
@@ -18,6 +18,37 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
   const handleRemoveStage = (index) => {
     if (stageData.length <= 1) return;
     dispatch(removeStage(index));
+  };
+
+  // Handle input focus to clear validation error
+  const handleInputFocus = (stageIndex, field) => {
+    if (stageData[stageIndex]?.validationErrors?.[field]) {
+      dispatch(clearValidationError({ stageIndex, field }));
+    }
+  };
+
+  // Helper function to render input with validation
+  const renderInputWithValidation = (stageIndex, field, value, onChange, type = "number", min = "0") => {
+    const hasError = stageData[stageIndex]?.validationErrors?.[field];
+    
+    return (
+      <div className="input-container">
+        <input 
+          type={type}
+          value={value} 
+          onChange={(e) => onChange(stageIndex, field, e.target.value)}
+          onFocus={() => handleInputFocus(stageIndex, field)}
+          min={min}
+          className={hasError ? "input-error" : ""}
+        />
+        {hasError && (
+          <div className="validation-error">
+            <span className="error-icon">⚠</span>
+            {stageData[stageIndex].validationErrors[field]}
+          </div>
+        )}
+      </div>
+    );
   };
 
   if (!isOpen) return null;
@@ -49,30 +80,22 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                     <td>{stage['Pass Stage']}</td>
                     <td>
                       <div className="number-input-container">
-                        <input 
-                          type="number" 
-                          value={stage['Pressure Vessel']} 
-                          onChange={(e) => handleStageChange(index, 'Pressure Vessel', parseInt(e.target.value) || 0)}
-                          min="0"
-                        />
-                        <div className="number-controls">
-                          <button onClick={() => handleStageChange(index, 'Pressure Vessel', stage['Pressure Vessel'] + 1)}>▲</button>
-                          <button onClick={() => handleStageChange(index, 'Pressure Vessel', Math.max(0, stage['Pressure Vessel'] - 1))}>▼</button>
-                        </div>
+                        {renderInputWithValidation(
+                          index, 
+                          'Pressure Vessel', 
+                          stage['Pressure Vessel'], 
+                          (stageIndex, field, value) => handleStageChange(stageIndex, field, parseInt(value) || 0)
+                        )}
                       </div>
                     </td>
                     <td>
                       <div className="number-input-container">
-                        <input 
-                          type="number" 
-                          value={stage['Elements']} 
-                          onChange={(e) => handleStageChange(index, 'Elements', parseInt(e.target.value) || 0)}
-                          min="0"
-                        />
-                        <div className="number-controls">
-                          <button onClick={() => handleStageChange(index, 'Elements', stage['Elements'] + 1)}>▲</button>
-                          <button onClick={() => handleStageChange(index, 'Elements', Math.max(0, stage['Elements'] - 1))}>▼</button>
-                        </div>
+                        {renderInputWithValidation(
+                          index, 
+                          'Elements', 
+                          stage['Elements'], 
+                          (stageIndex, field, value) => handleStageChange(stageIndex, field, parseInt(value) || 0)
+                        )}
                       </div>
                     </td>
                     <td>
@@ -84,13 +107,14 @@ const ArrayReactorPopup = ({ isOpen, onClose }) => {
                       </select>
                     </td>
                     <td>
-                      <input 
-                        type="number" 
-                        value={stage['Element age(years)']} 
-                        onChange={(e) => handleStageChange(index, 'Element age(years)', parseFloat(e.target.value) || 0)}
-                        step="0.01"
-                        min="0"
-                      />
+                      {renderInputWithValidation(
+                        index, 
+                        'Element age(years)', 
+                        stage['Element age(years)'], 
+                        (stageIndex, field, value) => handleStageChange(stageIndex, field, parseFloat(value) || 0),
+                        "number",
+                        "0"
+                      )}
                     </td>
        
                     <td>

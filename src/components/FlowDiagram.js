@@ -10,6 +10,8 @@ import SimulationInsights from "./SimulationInsights";
 
 import { updateIonValueProduct, updateParameterProduct } from '../redux/slices/productSlice';
 import { updateIonValueConcentrate, updateParameterConcentrate } from '../redux/slices/concentrateSlice';
+import { selectFeedWaterErrorCount } from '../redux/slices/feedWaterSlice';
+import { selectReactorErrorCount } from '../redux/slices/reactorSlice';
 
 import "../css/FlowDiagram.css";
 
@@ -25,6 +27,22 @@ const FlowDiagram = () => {
   const flowValues = useSelector(state => state.flowRates.flowValues);
   const stageData = useSelector(state => state.reactor[0]);
 
+  // Get error counts from different slices
+  const feedWaterErrors = useSelector(selectFeedWaterErrorCount);
+  const reactorErrors = useSelector(selectReactorErrorCount);
+  const totalWarnings = feedWaterErrors + reactorErrors;
+
+  // Helper function to render error indicator
+  const renderErrorIndicator = (errorCount) => {
+    if (errorCount > 0) {
+      return (
+        <div className="error-indicator">
+          <span className="error-count">{errorCount}</span>
+        </div>
+      );
+    }
+    return null;
+  };
 
 
   const handleIonChangeProduct = (key, value) => {
@@ -256,6 +274,7 @@ const FlowDiagram = () => {
                 <div className="water-drop-icon"></div>
               </div>
               <span className="box-title">Feed</span>
+              {renderErrorIndicator(feedWaterErrors)}
             </div>
 
             {/* Arrow: Feed -> Flow */}
@@ -282,6 +301,7 @@ const FlowDiagram = () => {
                 <div className="reactor-icon"></div>
               </div>
               <span className="box-title">Array Reactor</span>
+              {renderErrorIndicator(reactorErrors)}
             </div>
 
             {/* Arrow: Array Reactor -> Product */}
@@ -327,23 +347,31 @@ const FlowDiagram = () => {
           
             {/* Run Button - Moved back inside the flow-diagram-container */}
             <div className="run-button-container">
-              <button 
-                className="run-simulation-button" 
-                onClick={handleRunSimulation}
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <>
-                    <span className="loading-spinner"></span>
-                    <span className="run-text">Processing...</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="run-icon">▶</span>
-                    <span className="run-text">Run</span>
-                  </>
-                )}
-              </button>
+              <div className="run-button-wrapper">
+                <button 
+                  className="run-simulation-button" 
+                  onClick={handleRunSimulation}
+                  disabled={isLoading || totalWarnings > 0}
+                >
+                  {isLoading ? (
+                    <>
+                      <span className="loading-spinner"></span>
+                      <span className="run-text">Processing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="run-icon">▶</span>
+                      <span className="run-text">Run</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              {totalWarnings > 0 && (
+                <div className="warning-message">
+                  <span className="warning-icon">⚠</span>
+                  Please fix {totalWarnings} error{totalWarnings > 1 ? 's' : ''} before running simulation
+                </div>
+              )}
             </div>
           </div>
 
