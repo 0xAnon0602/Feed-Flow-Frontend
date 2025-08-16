@@ -266,6 +266,17 @@ const FlowDiagram = () => {
     <div>
       <div className="flow-diagram-layout">
         <div className="flow-diagram-main">
+          {/* Feed Flow Range Warning */}
+          <div className="feed-flow-warning">
+            <div className="warning-banner">
+              <span className="warning-icon">⚠</span>
+              <span className="warning-text">
+                <strong>Important:</strong> This software is optimized for feed flow rates between 
+                <strong> 27 - 200 m³/hr</strong>. Results outside this range may not be accurate.
+              </span>
+            </div>
+          </div>
+
           <div className="flow-diagram-container">
             
             {/* Feed box */}
