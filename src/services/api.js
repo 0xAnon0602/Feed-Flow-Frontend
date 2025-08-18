@@ -2,7 +2,7 @@
  * API service for communicating with the backend
  */
 
-const API_BASE_URL = 'https://feed-flow-backend.onrender.com';
+const API_BASE_URL = 'https://0xanon.pythonanywhere.com/';
 
 /**
  * Fetch the input schema from the backend
