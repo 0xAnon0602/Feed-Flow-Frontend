@@ -126,7 +126,7 @@ const FlowDiagram = () => {
             ],
           "parameters": [
             'Permeate TDS',
-            'Specific Energy(kwh/m3)',
+            'Total Power Consumption(KW)',
             'Feed Pressure(bar)',
             'Flux(lmh)',
           ]
@@ -268,7 +268,7 @@ const FlowDiagram = () => {
         <div className="flow-diagram-main">
           
           {/* Feed Flow Range Warning */}
-          <div className="feed-flow-warning">
+          {/* <div className="feed-flow-warning">
             <div className="warning-banner">
               <span className="warning-icon">⚠</span>
               <span className="warning-text">
@@ -276,7 +276,7 @@ const FlowDiagram = () => {
                 <strong> 27 - 200 m³/hr</strong>. Results outside this range may not be accurate.
               </span>
             </div>
-          </div>
+          </div> */}
 
           <div className="flow-diagram-container">
             

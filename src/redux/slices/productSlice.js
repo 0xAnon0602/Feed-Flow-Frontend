@@ -25,7 +25,7 @@ const initialState = {
   },
   parameters: {
     'Permeate TDS': "0.00",
-    'Specific Energy(kwh/m3)': "0.0",
+    'Total Power Consumption(KW)': "0.0",
     'Feed Pressure(bar)': "0.0",
     'Flux(lmh)': "0.0",
   }

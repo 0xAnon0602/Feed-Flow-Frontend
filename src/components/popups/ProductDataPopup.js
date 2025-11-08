@@ -248,10 +248,10 @@ const ProductDataPopup = ({ isOpen, onClose }) => {
               </div>
               
               <div className="parameter-row">
-                <label>Specific Energy (kwh/m3)</label>
+                <label>Total Power Consumption(KW)</label>
                 <input 
                   type="text" 
-                  value={parameters['Specific Energy(kwh/m3)']} 
+                  value={parameters['Total Power Consumption(KW)']} 
                   readOnly
                 />
               </div>
