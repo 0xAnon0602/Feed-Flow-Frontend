@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   flowValues: {
     'Feed Flow (m3/hr)': "100",
+    'Permeate Flow (m3/hr)': "",
   },
   selectedOption: "feed",
 };

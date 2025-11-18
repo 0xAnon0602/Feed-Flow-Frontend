@@ -31,9 +31,9 @@ const validationRules = {
   },
   parameters: {
     'Feed Water TDS': { min: 0, max: 100000000, unit: "mg/l" },
-    'Feed water pH': { min: 0, max: 14, unit: "" },
+    'Feed water pH': { min: 6, max: 9, unit: "" },
     'Feed Temperature': { min: 0, max: 100, unit: "°C" },
-    'Recovery(%)': { min: 0, max: 100, unit: "%" }
+    'Recovery(%)': { min: 15, max: 50, unit: "%" }
   }
 };
 
